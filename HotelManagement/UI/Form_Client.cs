@@ -40,7 +40,7 @@ namespace HotelManagement
 
                 if (client.Insert())
                 {
-                    MessageBox.Show("gooooooodddd");
+                    MessageBox.Show("Clients Details Saved");
                 }
 
 
