@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using HotelManagement.BL;
 using HotelManagement.DAL;
+using System.Data;
 
 namespace HotelManagement.BL
 {
@@ -32,11 +33,27 @@ namespace HotelManagement.BL
 
 
 
+        public Client() { }
 
 
+        public Client(DataRow dataRow)
+        {
+            //מייצרת לקוח מתוך שורת לקוח
+
+            this.m_id = dataRow["IdNum"].ToString();
+            this.m_firstName= dataRow["FirstName"].ToString();
+            this.m_lastName = dataRow["LastName"].ToString();
+            this.m_phone= dataRow["Phone"].ToString();
+            this.m_mail = dataRow["Mail"].ToString();
+            this.m_creditCard = dataRow["CreditCard"].ToString();
+        }
         public bool Insert()
         {
             return Client_DAL.Insert(m_firstName, m_lastName, m_mail, m_id, m_phone, m_creditCard);
+        }
+        public override string ToString()
+        {
+            return m_firstName + " " + m_lastName;
         }
     }
 }
