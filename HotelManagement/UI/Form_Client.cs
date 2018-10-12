@@ -55,10 +55,19 @@ namespace HotelManagement
             else
             {
                 Client client = FormToClient();
-
-                if (client.Insert())
+                if (client.ID == 0)
                 {
-                    MessageBox.Show("Clients Details Saved");
+                    if (client.Insert())
+                        MessageBox.Show("Clients Details Saved");
+                    else
+                        MessageBox.Show("Cannot Save Clients Details");
+                }
+                else
+                {
+                    if (client.Update())
+                        MessageBox.Show("Clients Details UPDATED");
+                    else
+                        MessageBox.Show("Cannot UPDATE Clients Details");
                 }
 
 
