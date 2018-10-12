@@ -17,6 +17,22 @@ namespace HotelManagement
         public Form_Client()
         {
             InitializeComponent();
+            //Form_Client_InputLanguageChanged(null, null);
+
+        }
+
+
+        private void Form_Client_InputLanguageChanged(object sender, InputLanguageChangedEventArgs e)
+        {
+            InputLanguage myCurrentLang = InputLanguage.CurrentInputLanguage;
+            if (myCurrentLang.Culture.Name.ToLower() != "en-us")
+                MessageBox.Show("Language not english");
+
+
+        }
+        private bool CapsLockChek()
+        {
+            return (Control.IsKeyLocked(Keys.CapsLock));
         }
 
         private void button_cancel_Click(object sender, EventArgs e)
@@ -95,8 +111,16 @@ namespace HotelManagement
 
         private void Check_Name(object sender, KeyPressEventArgs e)
         {
+            
             if (!IsEnglishLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && (e.KeyChar != ' '))
                 e.KeyChar = char.MinValue;
+            if (CapsLockChek())
+            {
+                MessageBox.Show("CapsLock is locked");
+                e.KeyChar = char.MinValue;
+
+            }
+
         }
 
         private void Check_Num(object sender, KeyPressEventArgs e)
