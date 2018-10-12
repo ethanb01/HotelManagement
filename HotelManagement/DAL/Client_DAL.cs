@@ -55,7 +55,7 @@ namespace HotelManagement.DAL
 
         }
 
-        public static bool Update(string id, string firstName, string lastName, string mail, string taz, string phone, string creditCard)
+        public static bool Update(int id, string firstName, string lastName, string mail, string taz, string phone, string creditCard)
         {
 
             //מעדכנת את הלקוח במסד הנתונים
