@@ -43,6 +43,7 @@
             this.Phone = new System.Windows.Forms.Label();
             this.button_cancel = new System.Windows.Forms.Button();
             this.button_save = new System.Windows.Forms.Button();
+            this.listBox_Clients = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // first_name
@@ -198,12 +199,23 @@
             this.button_save.UseVisualStyleBackColor = true;
             this.button_save.Click += new System.EventHandler(this.button_save_Click);
             // 
+            // listBox_Clients
+            // 
+            this.listBox_Clients.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox_Clients.FormattingEnabled = true;
+            this.listBox_Clients.ItemHeight = 31;
+            this.listBox_Clients.Location = new System.Drawing.Point(970, 203);
+            this.listBox_Clients.Name = "listBox_Clients";
+            this.listBox_Clients.Size = new System.Drawing.Size(596, 562);
+            this.listBox_Clients.TabIndex = 24;
+            // 
             // Form_Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(776, 1012);
+            this.ClientSize = new System.Drawing.Size(1792, 1012);
+            this.Controls.Add(this.listBox_Clients);
             this.Controls.Add(this.button_cancel);
             this.Controls.Add(this.button_save);
             this.Controls.Add(this.textBox_phone);
@@ -243,6 +255,7 @@
         private System.Windows.Forms.Label Phone;
         private System.Windows.Forms.Button button_cancel;
         private System.Windows.Forms.Button button_save;
+        private System.Windows.Forms.ListBox listBox_Clients;
     }
 }
 
