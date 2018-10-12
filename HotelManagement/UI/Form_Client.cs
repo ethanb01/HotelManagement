@@ -146,7 +146,7 @@ namespace HotelManagement
         private Client FormToClient()
         {
             Client client = new Client();
-
+            client.ID = int.Parse(label_ID.Text);
             client.FirstName = textBox_first_name.Text;
             client.LastName = textBox_lastname.Text;
             client.Mail = textBox_mail.Text;
@@ -176,6 +176,20 @@ namespace HotelManagement
             textBox_mail.Text = "";
             textBox_phone.Text = "";
             label_ID.Text = "0";
+        }
+
+        private void ClientToForm(Client client)
+        {
+
+            //ממירה את המידע בטנ"מ לקוח לטופס
+
+            label_ID.Text = client.ID.ToString();
+            textBox_first_name.Text = client.FirstName;
+            textBox_lastname.Text = client.LastName;
+            textBox_phone.Text = client.Phone;
+            textBox_mail.Text = client.Mail;
+            textBox_taz.Text = client.Taz;
+            textBox_creditcard.Text = client.CreditCard;
         }
     }
 }
