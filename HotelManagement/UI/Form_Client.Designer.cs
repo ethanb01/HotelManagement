@@ -44,6 +44,8 @@
             this.button_cancel = new System.Windows.Forms.Button();
             this.button_save = new System.Windows.Forms.Button();
             this.listBox_Clients = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label_ID = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // first_name
@@ -122,16 +124,16 @@
             this.id.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.id.Location = new System.Drawing.Point(65, 404);
             this.id.Name = "id";
-            this.id.Size = new System.Drawing.Size(53, 39);
+            this.id.Size = new System.Drawing.Size(72, 39);
             this.id.TabIndex = 6;
-            this.id.Text = "ID";
+            this.id.Text = "T.Z";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(189, 34);
+            this.label1.Location = new System.Drawing.Point(555, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(358, 63);
             this.label1.TabIndex = 10;
@@ -208,6 +210,27 @@
             this.listBox_Clients.Name = "listBox_Clients";
             this.listBox_Clients.Size = new System.Drawing.Size(596, 562);
             this.listBox_Clients.TabIndex = 24;
+            this.listBox_Clients.DoubleClick += new System.EventHandler(this.listBox_Clients_DoubleClick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label2.Location = new System.Drawing.Point(65, 130);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 39);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "ID";
+            // 
+            // label_ID
+            // 
+            this.label_ID.AutoSize = true;
+            this.label_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label_ID.Location = new System.Drawing.Point(323, 130);
+            this.label_ID.Name = "label_ID";
+            this.label_ID.Size = new System.Drawing.Size(36, 39);
+            this.label_ID.TabIndex = 26;
+            this.label_ID.Text = "0";
             // 
             // Form_Client
             // 
@@ -215,6 +238,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1792, 1012);
+            this.Controls.Add(this.label_ID);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.listBox_Clients);
             this.Controls.Add(this.button_cancel);
             this.Controls.Add(this.button_save);
@@ -256,6 +281,8 @@
         private System.Windows.Forms.Button button_cancel;
         private System.Windows.Forms.Button button_save;
         private System.Windows.Forms.ListBox listBox_Clients;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label_ID;
     }
 }
 
