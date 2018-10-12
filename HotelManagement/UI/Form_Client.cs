@@ -90,10 +90,10 @@ namespace HotelManagement
                 flag = false;
                 textBox_creditcard.BackColor = Color.Red;
             }
-            if (textBox_id.Text.Length != 9)
+            if (textBox_taz.Text.Length != 9)
             {
                 flag = false;
-                textBox_id.BackColor = Color.Red;
+                textBox_taz.BackColor = Color.Red;
             }
             if (textBox_mail.Text.Length < 3)
             {
@@ -137,7 +137,7 @@ namespace HotelManagement
             textBox_creditcard.BackColor = Color.White;
             textBox_first_name.BackColor = Color.White;
             textBox_mail.BackColor = Color.White;
-            textBox_id.BackColor = Color.White;
+            textBox_taz.BackColor = Color.White;
             textBox_phone.BackColor = Color.White;
             textBox_lastname.BackColor = Color.White;
             
@@ -151,7 +151,7 @@ namespace HotelManagement
             client.LastName = textBox_lastname.Text;
             client.Mail = textBox_mail.Text;
             client.Phone = textBox_phone.Text;
-            client.Id = textBox_id.Text;
+            client.Taz = textBox_taz.Text;
             client.CreditCard = textBox_creditcard.Text;
             return client;
         }
@@ -162,6 +162,20 @@ namespace HotelManagement
             ClientArr clientArr = new ClientArr();
             clientArr.Fill();
             listBox_Clients.DataSource = clientArr;
+        }
+
+        
+
+        private void button_clean_Click(object sender, EventArgs e)
+        {
+            All_White();
+            textBox_creditcard.Text = "";
+            textBox_first_name.Text = "";
+            textBox_taz.Text = "";
+            textBox_lastname.Text = "";
+            textBox_mail.Text = "";
+            textBox_phone.Text = "";
+            label_ID.Text = "0";
         }
     }
 }
