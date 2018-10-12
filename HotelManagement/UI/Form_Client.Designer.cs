@@ -46,6 +46,7 @@
             this.listBox_Clients = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label_ID = new System.Windows.Forms.Label();
+            this.button_clean = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // first_name
@@ -183,6 +184,7 @@
             // 
             // button_cancel
             // 
+            this.button_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_cancel.Location = new System.Drawing.Point(376, 842);
             this.button_cancel.Name = "button_cancel";
             this.button_cancel.Size = new System.Drawing.Size(161, 45);
@@ -193,6 +195,8 @@
             // 
             // button_save
             // 
+            this.button_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_save.ForeColor = System.Drawing.Color.Green;
             this.button_save.Location = new System.Drawing.Point(139, 842);
             this.button_save.Name = "button_save";
             this.button_save.Size = new System.Drawing.Size(161, 45);
@@ -232,12 +236,24 @@
             this.label_ID.TabIndex = 26;
             this.label_ID.Text = "0";
             // 
+            // button_clean
+            // 
+            this.button_clean.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_clean.ForeColor = System.Drawing.Color.Coral;
+            this.button_clean.Location = new System.Drawing.Point(605, 842);
+            this.button_clean.Name = "button_clean";
+            this.button_clean.Size = new System.Drawing.Size(161, 45);
+            this.button_clean.TabIndex = 27;
+            this.button_clean.Text = "Clean";
+            this.button_clean.UseVisualStyleBackColor = true;
+            // 
             // Form_Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1792, 1012);
+            this.Controls.Add(this.button_clean);
             this.Controls.Add(this.label_ID);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.listBox_Clients);
@@ -283,6 +299,7 @@
         private System.Windows.Forms.ListBox listBox_Clients;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label_ID;
+        private System.Windows.Forms.Button button_clean;
     }
 }
 
