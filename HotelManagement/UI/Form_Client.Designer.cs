@@ -34,7 +34,7 @@
             this.last_name = new System.Windows.Forms.Label();
             this.textBox_mail = new System.Windows.Forms.TextBox();
             this.mail = new System.Windows.Forms.Label();
-            this.textBox_id = new System.Windows.Forms.TextBox();
+            this.textBox_taz = new System.Windows.Forms.TextBox();
             this.id = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_creditcard = new System.Windows.Forms.TextBox();
@@ -108,16 +108,16 @@
             this.mail.TabIndex = 8;
             this.mail.Text = "Mail";
             // 
-            // textBox_id
+            // textBox_taz
             // 
-            this.textBox_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.textBox_id.Location = new System.Drawing.Point(306, 404);
-            this.textBox_id.MaxLength = 9;
-            this.textBox_id.Multiline = true;
-            this.textBox_id.Name = "textBox_id";
-            this.textBox_id.Size = new System.Drawing.Size(212, 48);
-            this.textBox_id.TabIndex = 7;
-            this.textBox_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Check_Num);
+            this.textBox_taz.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.textBox_taz.Location = new System.Drawing.Point(306, 404);
+            this.textBox_taz.MaxLength = 9;
+            this.textBox_taz.Multiline = true;
+            this.textBox_taz.Name = "textBox_taz";
+            this.textBox_taz.Size = new System.Drawing.Size(212, 48);
+            this.textBox_taz.TabIndex = 7;
+            this.textBox_taz.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Check_Num);
             // 
             // id
             // 
@@ -214,7 +214,6 @@
             this.listBox_Clients.Name = "listBox_Clients";
             this.listBox_Clients.Size = new System.Drawing.Size(596, 562);
             this.listBox_Clients.TabIndex = 24;
-            this.listBox_Clients.DoubleClick += new System.EventHandler(this.listBox_Clients_DoubleClick);
             // 
             // label2
             // 
@@ -246,6 +245,7 @@
             this.button_clean.TabIndex = 27;
             this.button_clean.Text = "Clean";
             this.button_clean.UseVisualStyleBackColor = true;
+            this.button_clean.Click += new System.EventHandler(this.button_clean_Click);
             // 
             // Form_Client
             // 
@@ -266,7 +266,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox_mail);
             this.Controls.Add(this.mail);
-            this.Controls.Add(this.textBox_id);
+            this.Controls.Add(this.textBox_taz);
             this.Controls.Add(this.id);
             this.Controls.Add(this.textBox_lastname);
             this.Controls.Add(this.last_name);
@@ -287,7 +287,7 @@
         private System.Windows.Forms.Label last_name;
         private System.Windows.Forms.TextBox textBox_mail;
         private System.Windows.Forms.Label mail;
-        private System.Windows.Forms.TextBox textBox_id;
+        private System.Windows.Forms.TextBox textBox_taz;
         private System.Windows.Forms.Label id;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox_creditcard;
