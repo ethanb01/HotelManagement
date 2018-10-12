@@ -58,14 +58,24 @@ namespace HotelManagement
                 if (client.ID == 0)
                 {
                     if (client.Insert())
+                    {
                         MessageBox.Show("Clients Details Saved");
+                        Clean_Form();
+                        ClientArrToForm();
+
+                    }
                     else
                         MessageBox.Show("Cannot Save Clients Details");
                 }
                 else
                 {
                     if (client.Update())
+                    {
                         MessageBox.Show("Clients Details UPDATED");
+                        Clean_Form();
+                        ClientArrToForm();
+
+                    }
                     else
                         MessageBox.Show("Cannot UPDATE Clients Details");
                 }
@@ -177,14 +187,7 @@ namespace HotelManagement
 
         private void button_clean_Click(object sender, EventArgs e)
         {
-            All_White();
-            textBox_creditcard.Text = "";
-            textBox_first_name.Text = "";
-            textBox_taz.Text = "";
-            textBox_lastname.Text = "";
-            textBox_mail.Text = "";
-            textBox_phone.Text = "";
-            label_ID.Text = "0";
+            Clean_Form();
         }
 
         private void ClientToForm(Client client)
@@ -204,6 +207,19 @@ namespace HotelManagement
         private void listBox_Clients_DoubleClick(object sender, EventArgs e)
         {
             ClientToForm(listBox_Clients.SelectedItem as Client);
+        }
+
+        private void Clean_Form()
+        {
+
+            All_White();
+            textBox_creditcard.Text = "";
+            textBox_first_name.Text = "";
+            textBox_taz.Text = "";
+            textBox_lastname.Text = "";
+            textBox_mail.Text = "";
+            textBox_phone.Text = "";
+            label_ID.Text = "0";
         }
     }
 }
