@@ -30,8 +30,8 @@ namespace HotelManagement.BL
         private string m_creditCard;
         public string CreditCard { get => m_creditCard; set => m_creditCard = value; }
 
-        private string m_id;
-        public string ID { get => m_id; set => m_id = value; }
+        private int m_id;
+        public int ID { get => m_id; set => m_id = value; }
 
 
 
