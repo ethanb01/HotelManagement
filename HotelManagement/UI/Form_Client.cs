@@ -30,6 +30,7 @@ namespace HotelManagement
 
 
         }
+
         private bool CapsLockChek()
         {
             return (Control.IsKeyLocked(Keys.CapsLock));
@@ -62,6 +63,7 @@ namespace HotelManagement
 
             }
         }
+
         public bool CheckGood()
         {
             flag = true;
@@ -129,9 +131,6 @@ namespace HotelManagement
                 e.KeyChar = char.MinValue;
         }
 
-        
-        
-
         public void All_White()
         {
             textBox_creditcard.BackColor = Color.White;
@@ -142,8 +141,6 @@ namespace HotelManagement
             textBox_lastname.BackColor = Color.White;
             
         }
-
-        
 
         private Client FormToClient()
         {
@@ -156,6 +153,14 @@ namespace HotelManagement
             client.Id = textBox_id.Text;
             client.CreditCard = textBox_creditcard.Text;
             return client;
+        }
+
+        private void ClientArrToForm()
+        {
+            //ממירה את הטנ"מ אוסף לקוחות לטופס
+            ClientArr clientArr = new ClientArr();
+            clientArr.Fill();
+            listBox_Clients.DataSource = clientArr;
         }
     }
 }
