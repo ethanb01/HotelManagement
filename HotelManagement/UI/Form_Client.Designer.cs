@@ -214,6 +214,7 @@
             this.listBox_Clients.Name = "listBox_Clients";
             this.listBox_Clients.Size = new System.Drawing.Size(596, 562);
             this.listBox_Clients.TabIndex = 24;
+            this.listBox_Clients.DoubleClick += new System.EventHandler(this.listBox_Clients_DoubleClick);
             // 
             // label2
             // 
