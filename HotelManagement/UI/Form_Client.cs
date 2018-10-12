@@ -191,6 +191,11 @@ namespace HotelManagement
             textBox_taz.Text = client.Taz;
             textBox_creditcard.Text = client.CreditCard;
         }
+
+        private void listBox_Clients_DoubleClick(object sender, EventArgs e)
+        {
+            ClientToForm(listBox_Clients.SelectedItem as Client);
+        }
     }
 }
 
