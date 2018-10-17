@@ -221,6 +221,28 @@ namespace HotelManagement
             textBox_phone.Text = "";
             label_ID.Text = "0";
         }
+
+        private void button_deleteClient_Click(object sender, EventArgs e)
+        {
+            Client client = FormToClient();
+            if (client.ID == 0)
+            {
+                MessageBox.Show("Please choice a Client to delete");
+            }
+            else
+            {
+
+                if (MessageBox.Show("Are you sure to delete the client: " + client.FirstName +" "+ client.LastName+ " ? " , "Be Careful" , MessageBoxButtons.YesNo, MessageBoxIcon.Warning ,MessageBoxDefaultButton.Button2, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    client.Delete();
+                    Clean_Form();
+                    ClientArrToForm();
+                }
+
+              
+                
+            }
+        }
     }
 }
 

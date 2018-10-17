@@ -47,6 +47,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label_ID = new System.Windows.Forms.Label();
             this.button_clean = new System.Windows.Forms.Button();
+            this.button_deleteClient = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // first_name
@@ -185,11 +186,11 @@
             // button_cancel
             // 
             this.button_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_cancel.Location = new System.Drawing.Point(376, 842);
+            this.button_cancel.Location = new System.Drawing.Point(1516, 842);
             this.button_cancel.Name = "button_cancel";
             this.button_cancel.Size = new System.Drawing.Size(161, 45);
             this.button_cancel.TabIndex = 23;
-            this.button_cancel.Text = "Cancel";
+            this.button_cancel.Text = "Exit";
             this.button_cancel.UseVisualStyleBackColor = true;
             this.button_cancel.Click += new System.EventHandler(this.button_cancel_Click);
             // 
@@ -240,7 +241,7 @@
             // 
             this.button_clean.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_clean.ForeColor = System.Drawing.Color.Coral;
-            this.button_clean.Location = new System.Drawing.Point(605, 842);
+            this.button_clean.Location = new System.Drawing.Point(357, 842);
             this.button_clean.Name = "button_clean";
             this.button_clean.Size = new System.Drawing.Size(161, 45);
             this.button_clean.TabIndex = 27;
@@ -248,12 +249,25 @@
             this.button_clean.UseVisualStyleBackColor = true;
             this.button_clean.Click += new System.EventHandler(this.button_clean_Click);
             // 
+            // button_deleteClient
+            // 
+            this.button_deleteClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_deleteClient.ForeColor = System.Drawing.Color.Red;
+            this.button_deleteClient.Location = new System.Drawing.Point(593, 842);
+            this.button_deleteClient.Name = "button_deleteClient";
+            this.button_deleteClient.Size = new System.Drawing.Size(267, 45);
+            this.button_deleteClient.TabIndex = 28;
+            this.button_deleteClient.Text = "DELETE CLIENT";
+            this.button_deleteClient.UseVisualStyleBackColor = true;
+            this.button_deleteClient.Click += new System.EventHandler(this.button_deleteClient_Click);
+            // 
             // Form_Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1792, 1012);
+            this.Controls.Add(this.button_deleteClient);
             this.Controls.Add(this.button_clean);
             this.Controls.Add(this.label_ID);
             this.Controls.Add(this.label2);
@@ -301,6 +315,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label_ID;
         private System.Windows.Forms.Button button_clean;
+        private System.Windows.Forms.Button button_deleteClient;
     }
 }
 
