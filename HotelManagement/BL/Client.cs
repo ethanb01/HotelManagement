@@ -60,6 +60,11 @@ namespace HotelManagement.BL
             return Client_DAL.Update(m_id, m_firstName, m_lastName, m_mail , m_taz, m_phone , m_creditCard);
         }
 
+
+        public bool Delete()
+        {
+            return Client_DAL.Delete(m_id);
+        }
         public override string ToString()
         {
             return m_firstName + " " + m_lastName;
