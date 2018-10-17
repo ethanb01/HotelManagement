@@ -62,7 +62,7 @@ namespace HotelManagement.DAL
 
             string str = "UPDATE Table_Client SET" 
             + " " + "[IdNum] = " + "'" + taz + "'"
-            + " " + "[FirstName] = " + "'" + firstName + "'"
+            + "," + "[FirstName] = " + "'" + firstName + "'"
             + "," + "[LastName] = " + "'" + lastName + "'"
             + "," + "[Phone] = " + "'" + phone+ "'"
             + "," + "[Mail] = " + "'" + mail+ "'"
