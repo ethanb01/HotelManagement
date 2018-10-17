@@ -41,7 +41,7 @@ namespace HotelManagement.BL
         public Client(DataRow dataRow)
         {
             //מייצרת לקוח מתוך שורת לקוח
-
+            this.ID = (int)dataRow["ID"];
             this.m_taz = dataRow["IdNum"].ToString();
             this.m_firstName= dataRow["FirstName"].ToString();
             this.m_lastName = dataRow["LastName"].ToString();
