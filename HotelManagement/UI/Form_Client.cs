@@ -19,7 +19,6 @@ namespace HotelManagement
             InitializeComponent();
             //Form_Client_InputLanguageChanged(null, null);
             ClientArrToForm();
-
         }
 
 
