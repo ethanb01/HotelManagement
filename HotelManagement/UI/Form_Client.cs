@@ -182,8 +182,6 @@ namespace HotelManagement
             listBox_Clients.DataSource = clientArr;
         }
 
-        
-
         private void button_clean_Click(object sender, EventArgs e)
         {
             Clean_Form();
