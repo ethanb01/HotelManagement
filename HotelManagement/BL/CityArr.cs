@@ -30,5 +30,23 @@ namespace HotelManagement.BL
                 this.Add(city);
             }
         }
+
+        public bool IsContain(string cityName)
+        {
+
+            //בדיקה האם יש ישוב עם אותו שם
+            string curCityName;
+            for (int i = 0; i < this.Count; i++)
+            {
+                curCityName = (this[i] as City).CityName;
+
+                
+                if (curCityName == cityName)
+                    return true;
+
+            }
+            return false;
+        }
+
     }
 }
