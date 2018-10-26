@@ -9,7 +9,7 @@ using HotelManagement.DAL;
 
 namespace HotelManagement.BL
 {
-    class ClientArr : ArrayList
+    public class ClientArr : ArrayList
     {
         public void Fill()
         {

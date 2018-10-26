@@ -9,7 +9,7 @@ using System.Data;
 
 namespace HotelManagement.BL
 {
-    class Client
+    public class Client
     {
 
         private string m_firstName;
