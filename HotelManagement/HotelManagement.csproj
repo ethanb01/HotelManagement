@@ -53,6 +53,12 @@
     <Compile Include="DAL\City_DAL.cs" />
     <Compile Include="DAL\Client_DAL.cs" />
     <Compile Include="DAL\Dal.cs" />
+    <Compile Include="UI\Form_City.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Form_City.Designer.cs">
+      <DependentUpon>Form_City.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Form_Client.cs">
       <SubType>Form</SubType>
     </Compile>
