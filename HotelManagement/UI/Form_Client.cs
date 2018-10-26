@@ -240,6 +240,28 @@ namespace HotelManagement
                 
             }
         }
+
+        private void groupbox_lastname_KeyUp(object sender, KeyEventArgs e)
+        {
+            int id = 0;
+
+            //אם המשתמש רשם ערך בשדה המזהה
+
+            if (groupbox_taz.Text != "")
+                id = int.Parse(groupbox_taz.Text);
+
+            //מייצרים אוסף של כלל הלקוחות
+
+            ClientArr clientArr = new ClientArr();
+            clientArr.Fill();
+
+            //מסננים את אוסף הלקוחות לפי שדות הסינון שרשם המשתמש
+
+            clientArr = clientArr.Filter(id.ToString(), groupbox_lastname.Text, groupbox_phone.Text);
+            //מציבים בתיבת הרשימה את אוסף הלקוחות
+
+            listBox_Clients.DataSource = clientArr;
+        }
     }
 }
 

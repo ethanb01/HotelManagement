@@ -48,6 +48,14 @@
             this.label_ID = new System.Windows.Forms.Label();
             this.button_clean = new System.Windows.Forms.Button();
             this.button_deleteClient = new System.Windows.Forms.Button();
+            this.groupBox_filter = new System.Windows.Forms.GroupBox();
+            this.groupbox_phone = new System.Windows.Forms.TextBox();
+            this.groupbox_taz = new System.Windows.Forms.TextBox();
+            this.groupbox_lastname = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox_filter.SuspendLayout();
             this.SuspendLayout();
             // 
             // first_name
@@ -211,7 +219,7 @@
             this.listBox_Clients.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox_Clients.FormattingEnabled = true;
             this.listBox_Clients.ItemHeight = 31;
-            this.listBox_Clients.Location = new System.Drawing.Point(970, 203);
+            this.listBox_Clients.Location = new System.Drawing.Point(785, 203);
             this.listBox_Clients.Name = "listBox_Clients";
             this.listBox_Clients.Size = new System.Drawing.Size(596, 562);
             this.listBox_Clients.TabIndex = 24;
@@ -261,12 +269,88 @@
             this.button_deleteClient.UseVisualStyleBackColor = true;
             this.button_deleteClient.Click += new System.EventHandler(this.button_deleteClient_Click);
             // 
+            // groupBox_filter
+            // 
+            this.groupBox_filter.Controls.Add(this.groupbox_phone);
+            this.groupBox_filter.Controls.Add(this.groupbox_taz);
+            this.groupBox_filter.Controls.Add(this.groupbox_lastname);
+            this.groupBox_filter.Controls.Add(this.label5);
+            this.groupBox_filter.Controls.Add(this.label4);
+            this.groupBox_filter.Controls.Add(this.label3);
+            this.groupBox_filter.Location = new System.Drawing.Point(1431, 203);
+            this.groupBox_filter.Name = "groupBox_filter";
+            this.groupBox_filter.Size = new System.Drawing.Size(512, 271);
+            this.groupBox_filter.TabIndex = 29;
+            this.groupBox_filter.TabStop = false;
+            this.groupBox_filter.Text = "Filter";
+            // 
+            // groupbox_phone
+            // 
+            this.groupbox_phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.groupbox_phone.Location = new System.Drawing.Point(240, 201);
+            this.groupbox_phone.Multiline = true;
+            this.groupbox_phone.Name = "groupbox_phone";
+            this.groupbox_phone.Size = new System.Drawing.Size(212, 48);
+            this.groupbox_phone.TabIndex = 17;
+            this.groupbox_phone.KeyUp += new System.Windows.Forms.KeyEventHandler(this.groupbox_lastname_KeyUp);
+            // 
+            // groupbox_taz
+            // 
+            this.groupbox_taz.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.groupbox_taz.Location = new System.Drawing.Point(240, 126);
+            this.groupbox_taz.Multiline = true;
+            this.groupbox_taz.Name = "groupbox_taz";
+            this.groupbox_taz.Size = new System.Drawing.Size(212, 48);
+            this.groupbox_taz.TabIndex = 16;
+            this.groupbox_taz.KeyUp += new System.Windows.Forms.KeyEventHandler(this.groupbox_lastname_KeyUp);
+            // 
+            // groupbox_lastname
+            // 
+            this.groupbox_lastname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.groupbox_lastname.Location = new System.Drawing.Point(240, 44);
+            this.groupbox_lastname.Multiline = true;
+            this.groupbox_lastname.Name = "groupbox_lastname";
+            this.groupbox_lastname.Size = new System.Drawing.Size(212, 48);
+            this.groupbox_lastname.TabIndex = 15;
+            this.groupbox_lastname.KeyUp += new System.Windows.Forms.KeyEventHandler(this.groupbox_lastname_KeyUp);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label5.Location = new System.Drawing.Point(24, 201);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(121, 39);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Phone";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label4.Location = new System.Drawing.Point(24, 44);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(194, 39);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Last Name";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label3.Location = new System.Drawing.Point(33, 126);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(72, 39);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "T.Z";
+            // 
             // Form_Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1792, 1012);
+            this.ClientSize = new System.Drawing.Size(1983, 1012);
+            this.Controls.Add(this.groupBox_filter);
             this.Controls.Add(this.button_deleteClient);
             this.Controls.Add(this.button_clean);
             this.Controls.Add(this.label_ID);
@@ -289,6 +373,8 @@
             this.Controls.Add(this.first_name);
             this.Name = "Form_Client";
             this.Text = "Form_Client";
+            this.groupBox_filter.ResumeLayout(false);
+            this.groupBox_filter.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -316,6 +402,13 @@
         private System.Windows.Forms.Label label_ID;
         private System.Windows.Forms.Button button_clean;
         private System.Windows.Forms.Button button_deleteClient;
+        private System.Windows.Forms.GroupBox groupBox_filter;
+        private System.Windows.Forms.TextBox groupbox_phone;
+        private System.Windows.Forms.TextBox groupbox_taz;
+        private System.Windows.Forms.TextBox groupbox_lastname;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
     }
 }
 
