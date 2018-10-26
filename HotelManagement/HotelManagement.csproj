@@ -46,8 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BL\City.cs" />
     <Compile Include="BL\Client.cs" />
+    <Compile Include="BL\CityArr.cs" />
     <Compile Include="BL\ClientArr.cs" />
+    <Compile Include="DAL\City_DAL.cs" />
     <Compile Include="DAL\Client_DAL.cs" />
     <Compile Include="DAL\Dal.cs" />
     <Compile Include="UI\Form_Client.cs">
