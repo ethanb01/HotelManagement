@@ -45,9 +45,9 @@ namespace HotelManagement.BL
                 (
 
                 //מזהה 0 – כלומר, לא נבחר מזהה בסינון
-
-                (int.Parse(id) <=0 ) || (client.Taz == id)
-                && client.LastName.StartsWith(lastName)
+                
+                ((client.Taz.StartsWith(id)) || (client.Taz == id)||(int.Parse(id)==0))
+                && client.LastName.StartsWith(lastName.ToUpper())
                 && client.Phone.Contains(cellNumber)
                 )
 
