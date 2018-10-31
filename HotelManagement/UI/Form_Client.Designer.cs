@@ -292,6 +292,7 @@
             this.groupbox_phone.Name = "groupbox_phone";
             this.groupbox_phone.Size = new System.Drawing.Size(212, 48);
             this.groupbox_phone.TabIndex = 17;
+            this.groupbox_phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Check_Num);
             this.groupbox_phone.KeyUp += new System.Windows.Forms.KeyEventHandler(this.groupbox_lastname_KeyUp);
             // 
             // groupbox_taz
@@ -302,6 +303,7 @@
             this.groupbox_taz.Name = "groupbox_taz";
             this.groupbox_taz.Size = new System.Drawing.Size(212, 48);
             this.groupbox_taz.TabIndex = 16;
+            this.groupbox_taz.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Check_Num);
             this.groupbox_taz.KeyUp += new System.Windows.Forms.KeyEventHandler(this.groupbox_lastname_KeyUp);
             // 
             // groupbox_lastname
@@ -312,6 +314,7 @@
             this.groupbox_lastname.Name = "groupbox_lastname";
             this.groupbox_lastname.Size = new System.Drawing.Size(212, 48);
             this.groupbox_lastname.TabIndex = 15;
+            this.groupbox_lastname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Check_Name);
             this.groupbox_lastname.KeyUp += new System.Windows.Forms.KeyEventHandler(this.groupbox_lastname_KeyUp);
             // 
             // label5
