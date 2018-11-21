@@ -19,6 +19,9 @@ namespace HotelManagement
             InitializeComponent();
             //Form_Client_InputLanguageChanged(null, null);
             ClientArrToForm();
+            CityArrToForm();
+
+            comboBox_city.SelectedIndex = -1;
         }
 
 
@@ -96,8 +99,12 @@ namespace HotelManagement
                 flag = false;
                 textBox_lastname.BackColor = Color.Red;
             }
+            if(comboBox_city.Text.Length < 2)
+            {
+                flag = false;
+                comboBox_city.BackColor = Color.Red;
+            }
 
-         
             if (textBox_phone.Text.Length != 10)
             {
                 flag = false;
@@ -158,6 +165,7 @@ namespace HotelManagement
             textBox_taz.BackColor = Color.White;
             textBox_phone.BackColor = Color.White;
             textBox_lastname.BackColor = Color.White;
+            comboBox_city.BackColor = Color.White;
             
         }
 
@@ -171,6 +179,7 @@ namespace HotelManagement
             client.Phone = textBox_phone.Text;
             client.Taz = textBox_taz.Text;
             client.CreditCard = textBox_creditcard.Text;
+            client.City = (comboBox_city.SelectedItem as City);
             return client;
         }
 
@@ -199,6 +208,7 @@ namespace HotelManagement
             textBox_mail.Text = client.Mail;
             textBox_taz.Text = client.Taz;
             textBox_creditcard.Text = client.CreditCard;
+            comboBox_city.SelectedValue = client.City.ID;
         }
 
         private void listBox_Clients_DoubleClick(object sender, EventArgs e)
@@ -216,6 +226,7 @@ namespace HotelManagement
             textBox_lastname.Text = "";
             textBox_mail.Text = "";
             textBox_phone.Text = "";
+            comboBox_city.Text = "";
             label_ID.Text = "0";
         }
 
@@ -262,6 +273,18 @@ namespace HotelManagement
 
             listBox_Clients.DataSource = clientArr;
         }
+
+        public void CityArrToForm()
+        {
+
+            //ממירה את הטנ"מ אוסף ישובים לטופס
+
+            CityArr cityArr = new CityArr();
+            cityArr.Fill();
+            comboBox_city.DataSource = cityArr;
+            comboBox_city.ValueMember = "ID";
+            comboBox_city.DisplayMember = "CityName";
+        }
+
     }
 }
-

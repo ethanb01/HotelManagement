@@ -30,11 +30,15 @@ namespace HotelManagement.BL
         private string m_creditCard;
         public string CreditCard { get => m_creditCard; set => m_creditCard = value; }
 
+        private City m_City;
+        public City City
+        {
+            get { return m_City; }
+            set { m_City = value; }
+        }
+
         private int m_id;
         public int ID { get => m_id; set => m_id = value; }
-
-
-
 
         public Client() { }
 
@@ -48,16 +52,17 @@ namespace HotelManagement.BL
             this.m_phone= dataRow["Phone"].ToString();
             this.m_mail = dataRow["Mail"].ToString();
             this.m_creditCard = dataRow["CreditCard"].ToString();
+            this.m_City = new City(dataRow.GetParentRow("ClientCity"));
         }
 
         public bool Insert()
         {
-            return Client_DAL.Insert(m_firstName, m_lastName, m_mail, m_taz, m_phone, m_creditCard);
+            return Client_DAL.Insert(m_firstName, m_lastName, m_mail, m_taz, m_phone, m_creditCard, m_City.ID);
         }
 
         public bool Update()
         {
-            return Client_DAL.Update(m_id, m_firstName, m_lastName, m_mail , m_taz, m_phone , m_creditCard);
+            return Client_DAL.Update(m_id, m_firstName, m_lastName, m_mail , m_taz, m_phone , m_creditCard, m_City.ID);
         }
 
 

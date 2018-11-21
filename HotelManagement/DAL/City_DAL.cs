@@ -42,7 +42,7 @@ namespace HotelManagement.DAL
             //ממלאת את אוסף הטבלאות בטבלת הלקוחות
             Dal.FillDataSet(dataSet, "Table_City", "[Name]");
             //בהמשך יהיו כאן הוראות נוספות הקשורות לקשרי גומלין...
-
+            
         }
 
         public static bool Update(int id, string cityname)

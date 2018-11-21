@@ -55,6 +55,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.city = new System.Windows.Forms.Label();
+            this.comboBox_city = new System.Windows.Forms.ComboBox();
             this.groupBox_filter.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -206,7 +208,7 @@
             // 
             this.button_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_save.ForeColor = System.Drawing.Color.Green;
-            this.button_save.Location = new System.Drawing.Point(139, 842);
+            this.button_save.Location = new System.Drawing.Point(139, 910);
             this.button_save.Name = "button_save";
             this.button_save.Size = new System.Drawing.Size(161, 45);
             this.button_save.TabIndex = 22;
@@ -249,7 +251,7 @@
             // 
             this.button_clean.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_clean.ForeColor = System.Drawing.Color.Coral;
-            this.button_clean.Location = new System.Drawing.Point(357, 842);
+            this.button_clean.Location = new System.Drawing.Point(357, 910);
             this.button_clean.Name = "button_clean";
             this.button_clean.Size = new System.Drawing.Size(161, 45);
             this.button_clean.TabIndex = 27;
@@ -261,7 +263,7 @@
             // 
             this.button_deleteClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_deleteClient.ForeColor = System.Drawing.Color.Red;
-            this.button_deleteClient.Location = new System.Drawing.Point(593, 842);
+            this.button_deleteClient.Location = new System.Drawing.Point(593, 910);
             this.button_deleteClient.Name = "button_deleteClient";
             this.button_deleteClient.Size = new System.Drawing.Size(267, 45);
             this.button_deleteClient.TabIndex = 28;
@@ -347,12 +349,32 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "T.Z";
             // 
+            // city
+            // 
+            this.city.AutoSize = true;
+            this.city.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.city.Location = new System.Drawing.Point(71, 803);
+            this.city.Name = "city";
+            this.city.Size = new System.Drawing.Size(82, 39);
+            this.city.TabIndex = 30;
+            this.city.Text = "City";
+            // 
+            // comboBox_city
+            // 
+            this.comboBox_city.FormattingEnabled = true;
+            this.comboBox_city.Location = new System.Drawing.Point(306, 812);
+            this.comboBox_city.Name = "comboBox_city";
+            this.comboBox_city.Size = new System.Drawing.Size(189, 33);
+            this.comboBox_city.TabIndex = 31;
+            // 
             // Form_Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1983, 1012);
+            this.Controls.Add(this.comboBox_city);
+            this.Controls.Add(this.city);
             this.Controls.Add(this.groupBox_filter);
             this.Controls.Add(this.button_deleteClient);
             this.Controls.Add(this.button_clean);
@@ -412,6 +434,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label city;
+        private System.Windows.Forms.ComboBox comboBox_city;
     }
 }
 
