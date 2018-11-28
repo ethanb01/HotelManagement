@@ -21,7 +21,6 @@ namespace HotelManagement.UI
             ClientArrToForm();
             CityArrToForm(null);
 
-            comboBox_city.SelectedIndex = -1;
         }
 
 
@@ -280,6 +279,11 @@ namespace HotelManagement.UI
             //ממירה את הטנ"מ אוסף ישובים לטופס
             
             CityArr cityArr = new CityArr();
+            City cityDefault = new City();
+            cityDefault.ID = -1;
+            cityDefault.CityName = "Choice city";
+            cityArr.Add(cityDefault);
+
             cityArr.Fill();
             comboBox_city.DataSource = cityArr;
             comboBox_city.ValueMember = "ID";
@@ -290,9 +294,10 @@ namespace HotelManagement.UI
 
         private void button_add_city_Click(object sender, EventArgs e)
         {
-            Form_ form_City;
+            Form_City form_City;
             form_City = new Form_City();
-
+            form_City.ShowDialog();
+            CityArrToForm(form_City.SelectedCity);
         }
     }
 }

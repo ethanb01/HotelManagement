@@ -18,7 +18,7 @@ namespace HotelManagement.UI
         public Form_City()
         {
             InitializeComponent();
-            CityArrToForm();
+            CityArrToForm(null);
         }
 
 
@@ -86,8 +86,10 @@ namespace HotelManagement.UI
                         {
                             MessageBox.Show("City Details Saved");
                             Clean_Form();
-                            CityArrToForm();
-
+                            CityArr cityArr = new CityArr();
+                            cityArr.Fill();
+                            city = cityArr.GetCityWithMaxId();
+                            CityArrToForm(city);
                         }
                         else
                             MessageBox.Show("Cannot Save City Details");
@@ -103,7 +105,7 @@ namespace HotelManagement.UI
                     {
                         MessageBox.Show("City Details UPDATED");
                         Clean_Form();
-                        CityArrToForm();
+                        CityArrToForm(null);
 
                     }
                     else
@@ -122,12 +124,19 @@ namespace HotelManagement.UI
             return city;
         }
 
-        private void CityArrToForm()
+        private void CityArrToForm(City curCity)
         {
             //ממירה את הטנ"מ אוסף לקוחות לטופס
             CityArr CityArr = new CityArr();
             CityArr.Fill();
             listBox_City.DataSource = CityArr;
+            listBox_City.ValueMember = "ID";
+            listBox_City.DisplayMember = "CityName";
+
+            //אם נשלח לפעולה ישוב ,הצבתו בתיבת הבחירה של ישובים בטופס
+
+            if (curCity != null)
+                listBox_City.SelectedValue = curCity.ID;
         }
 
         private void CityToForm(City city)
@@ -169,17 +178,20 @@ namespace HotelManagement.UI
             }
             else
             {
-
                 if (MessageBox.Show("Are you sure to delete the city: " + city.CityName + " " + " ? ", "Be Careful", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == System.Windows.Forms.DialogResult.Yes)
                 {
                     city.Delete();
                     Clean_Form();
-                    CityArrToForm();
+                    CityArrToForm(null);
                 }
 
 
 
             }
+        }
+        public City SelectedCity
+        {
+            get { return (listBox_City.SelectedItem as City); }
         }
 
     }
