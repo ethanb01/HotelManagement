@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using HotelManagement.Properties;
 using HotelManagement.BL;
 
-namespace HotelManagement
+namespace HotelManagement.UI
 {
     public partial class Form_Client : Form
     {
@@ -19,7 +19,7 @@ namespace HotelManagement
             InitializeComponent();
             //Form_Client_InputLanguageChanged(null, null);
             ClientArrToForm();
-            CityArrToForm();
+            CityArrToForm(null);
 
             comboBox_city.SelectedIndex = -1;
         }
@@ -274,17 +274,25 @@ namespace HotelManagement
             listBox_Clients.DataSource = clientArr;
         }
 
-        public void CityArrToForm()
+        public void CityArrToForm(City curCity)
         {
 
             //ממירה את הטנ"מ אוסף ישובים לטופס
-
+            
             CityArr cityArr = new CityArr();
             cityArr.Fill();
             comboBox_city.DataSource = cityArr;
             comboBox_city.ValueMember = "ID";
             comboBox_city.DisplayMember = "CityName";
+            if (curCity != null)
+                comboBox_city.SelectedValue = curCity.ID;
         }
 
+        private void button_add_city_Click(object sender, EventArgs e)
+        {
+            Form_ form_City;
+            form_City = new Form_City();
+
+        }
     }
 }

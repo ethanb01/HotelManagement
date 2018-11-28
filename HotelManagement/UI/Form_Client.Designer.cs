@@ -1,4 +1,4 @@
-﻿namespace HotelManagement
+﻿namespace HotelManagement.UI
 {
     partial class Form_Client
     {
@@ -57,6 +57,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.city = new System.Windows.Forms.Label();
             this.comboBox_city = new System.Windows.Forms.ComboBox();
+            this.button_add_city = new System.Windows.Forms.Button();
             this.groupBox_filter.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -361,11 +362,23 @@
             // 
             // comboBox_city
             // 
+            this.comboBox_city.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_city.FormattingEnabled = true;
-            this.comboBox_city.Location = new System.Drawing.Point(306, 812);
+            this.comboBox_city.Location = new System.Drawing.Point(306, 797);
             this.comboBox_city.Name = "comboBox_city";
-            this.comboBox_city.Size = new System.Drawing.Size(189, 33);
+            this.comboBox_city.Size = new System.Drawing.Size(212, 45);
             this.comboBox_city.TabIndex = 31;
+            // 
+            // button_add_city
+            // 
+            this.button_add_city.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_add_city.Location = new System.Drawing.Point(545, 803);
+            this.button_add_city.Name = "button_add_city";
+            this.button_add_city.Size = new System.Drawing.Size(42, 39);
+            this.button_add_city.TabIndex = 32;
+            this.button_add_city.Text = "+";
+            this.button_add_city.UseVisualStyleBackColor = true;
+            this.button_add_city.Click += new System.EventHandler(this.button_add_city_Click);
             // 
             // Form_Client
             // 
@@ -373,6 +386,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1983, 1012);
+            this.Controls.Add(this.button_add_city);
             this.Controls.Add(this.comboBox_city);
             this.Controls.Add(this.city);
             this.Controls.Add(this.groupBox_filter);
@@ -436,6 +450,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label city;
         private System.Windows.Forms.ComboBox comboBox_city;
+        private System.Windows.Forms.Button button_add_city;
     }
 }
 
