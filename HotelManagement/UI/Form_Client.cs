@@ -299,5 +299,6 @@ namespace HotelManagement.UI
             form_City.ShowDialog();
             CityArrToForm(form_City.SelectedCity);
         }
+        
     }
 }
