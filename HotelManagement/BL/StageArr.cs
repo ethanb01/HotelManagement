@@ -9,53 +9,52 @@ using HotelManagement.DAL;
 
 namespace HotelManagement.BL
 {
-    public class CategoryRoomArr : ArrayList
+    public class StageArr : ArrayList
     {
         public void Fill()
         {
 
             //להביא מה-DAL טבלה מלאה בכל הלקוחות
 
-            DataTable dataTable = CategoryRoom_DAL.GetDataTable();
+            DataTable dataTable = Stage_DAL.GetDataTable();
 
             //להעביר את הערכים מהטבלה לתוך אוסף הלקוחות
             //להעביר כל שורה בטבלה ללקוח
 
             DataRow dataRow;
-            CategoryRoom categoryRoom;
+            Stage stage;
             for (int i = 0; i < dataTable.Rows.Count; i++)
             {
                 dataRow = dataTable.Rows[i];
-                categoryRoom = new CategoryRoom(dataRow);
-                this.Add(categoryRoom);
+                stage = new Stage(dataRow);
+                this.Add(stage);
             }
         }
 
-        public CategoryRoom GetCityWithMaxId()
+        public Stage GetStageWithMaxId()
         {
 
             //מחזירה את הישוב עם המזהה הגבוה ביותר
 
-            CategoryRoom maxcategory = new CategoryRoom();
+            Stage stage= new Stage();
             for (int i = 0; i < this.Count; i++)
             {
-                if ((this[i] as CategoryRoom).ID > maxcategory.ID)
-                    maxcategory = (this[i] as CategoryRoom);
+                if ((this[i] as Stage).ID > stage.ID)
+                    stage = (this[i] as Stage);
             }
-            return maxcategory;
+            return stage;
         }
 
-        public bool IsContain(string categoryName)
+        public bool IsContain(string stage)
         {
 
             //בדיקה האם יש ישוב עם אותו שם
-            string curCategoryRoom;
+            string curStage;
             for (int i = 0; i < this.Count; i++)
             {
-                curCategoryRoom = (this[i] as CategoryRoom).CategoryRoomName;
-
+                curStage = (this[i] as Stage).NumStage;
                 
-                if (curCategoryRoom == categoryName)
+                if (int.Parse(curStage) == int.Parse(stage))
                     return true;
 
             }

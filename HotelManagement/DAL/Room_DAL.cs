@@ -48,9 +48,9 @@ namespace HotelManagement.DAL
             //ממלאת את אוסף הטבלאות בטבלת הלקוחות
             Dal.FillDataSet(dataSet, "Table_Room", "[RoomNumber]");
             //בהמשך יהיו כאן הוראות נוספות הקשורות לקשרי גומלין...
-            City_DAL.FillDataSet(dataSet);
-            DataRelation dataRelation = null;
-            dataRelation = new DataRelation(
+            CategoryRoom_DAL.FillDataSet(dataSet);
+            DataRelation dataRelation1 = null;
+            dataRelation1 = new DataRelation(
 
             //שם קשר הגומלין
 
@@ -66,10 +66,35 @@ namespace HotelManagement.DAL
 
             //הוספת קשר הגומלין לאוסף הטבלאות
 
-            dataSet.Relations.Add(dataRelation);
+            dataSet.Relations.Add(dataRelation1);
+
+            Stage_DAL.FillDataSet(dataSet);
+            DataRelation dataRelation2 = null;
+            dataRelation2 = new DataRelation(
+
+            //שם קשר הגומלין
+
+            "StageRoom"
+
+            //עמודת הקשר בטבלת האב )המפתח הראשי של טבלת האב(
+
+            , dataSet.Tables["Table_Stage"].Columns["ID"]
+
+            //עמודת הקשר בטבלת הבן )המפתח הזר בטבלת הבן(
+
+            , dataSet.Tables["Table_Room"].Columns["Stage"]);
+
+            //הוספת קשר הגומלין לאוסף הטבלאות
+
+            dataSet.Relations.Add(dataRelation2);
 
 
         }
+
+
+
+
+
 
         public static bool Update(string roomNumber, int category, int stage, int id)
         {

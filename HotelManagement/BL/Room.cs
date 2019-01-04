@@ -15,8 +15,12 @@ namespace HotelManagement.BL
         private string m_roomNumber;
         public string RoomNumber { get => m_roomNumber; set => m_roomNumber = value; }
 
-        private int m_stage;
-        public int Stage { get => m_stage; set => m_stage = value; }
+        private Stage m_stage;
+        public Stage StageNum
+        {
+            get { return m_stage; }
+            set { m_stage = value; }
+        }
         
         private CategoryRoom m_CategoryRoom;
         public CategoryRoom CategoryRoom
@@ -36,17 +40,17 @@ namespace HotelManagement.BL
             this.ID = (int)dataRow["ID"];
             this.m_roomNumber = dataRow["RoomNumber"].ToString();
             this.m_CategoryRoom= new CategoryRoom(dataRow.GetParentRow("CategoryRoom"));
-            this.m_stage = (int)dataRow["Stage"];
+            this.m_stage = new Stage(dataRow.GetParentRow("StageRoom"));
         }
 
         public bool Insert()
         {
-            return Room_DAL.Insert(m_roomNumber, m_CategoryRoom.ID, m_stage);
+            return Room_DAL.Insert(m_roomNumber, m_CategoryRoom.ID, m_stage.ID);
         }
 
         public bool Update()
         {
-            return Room_DAL.Update(m_roomNumber, m_CategoryRoom.ID, m_stage, m_id);
+            return Room_DAL.Update(m_roomNumber, m_CategoryRoom.ID, m_stage.ID, m_id);
         }
 
 

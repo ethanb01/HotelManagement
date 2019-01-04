@@ -30,32 +30,40 @@ namespace HotelManagement.BL
                 this.Add(room);
             }
         }
-        //to change 
-        public RoomArr Filter(string id, string lastName, string cellNumber)
+
+        public RoomArr Filter(string room_number, Stage stage, CategoryRoom category_room)
         {
-            ClientArr clientArr = new ClientArr();
-            Room room;
+            RoomArr roomArr = new RoomArr();
+
             for (int i = 0; i < this.Count; i++)
             {
 
-                //הצבת הלקוח הנוכחי במשתנה עזר - לקוח
+                //הצבת המוצר הנוכחי במשתנה עזר - מוצר
 
-                room = (this[i] as Room);
-                if
-                (
+                Room room = (this[i] as Room);
+                if (
 
-                //מזהה 0 – כלומר, לא נבחר מזהה בסינון
-                
-                ((room.Taz.StartsWith(id)) || (room.Taz == id)||(int.Parse(id)==0))
-                && room.LastName.StartsWith(lastName.ToUpper())
-                && room.Phone.Contains(cellNumber)
+                //סינון לפי מזהה המוצר
+
+                //סינון לפי שם המוצר
+
+                room.RoomNumber.StartsWith(room_number)
+
+                //סינון לפי החברה
+                && (room.StageNum.NumStage == stage.NumStage)
+                //סינון לפי קטגוריה
+                && (category_room == null || category_room.ID == -1 || room.CategoryRoom.ID == category_room.ID)
                 )
+                {
 
-                    //הלקוח ענה לדרישות הסינון - הוספת הלקוח לאוסף הלקוחות המוחזר
+                    //המוצר ענה לדרישות החיפוש – הוספה שלו לאוסף המוחזר
 
-                    clientArr.Add(room);
+                    roomArr.Add(room);
+                    
+
+                }
             }
-            return clientArr;
+            return roomArr;
         }
     }
 }
