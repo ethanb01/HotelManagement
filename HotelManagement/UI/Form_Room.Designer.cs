@@ -37,7 +37,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.listBox_Rooms = new System.Windows.Forms.ListBox();
             this.groupBox_filter = new System.Windows.Forms.GroupBox();
-            this.comboBox_filter_stage = new System.Windows.Forms.ComboBox();
+            this.comboBox_filter_floor = new System.Windows.Forms.ComboBox();
             this.comboBox_filter_category = new System.Windows.Forms.ComboBox();
             this.textbox_filter_room_number = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,7 +49,7 @@
             this.button_save = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label_ID = new System.Windows.Forms.Label();
-            this.comboBox_stage = new System.Windows.Forms.ComboBox();
+            this.comboBox_floor = new System.Windows.Forms.ComboBox();
             this.groupBox_filter.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,7 +90,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 39);
             this.label2.TabIndex = 8;
-            this.label2.Text = "Stage";
+            this.label2.Text = "Floor";
             // 
             // button_add_category
             // 
@@ -137,7 +137,7 @@
             // 
             // groupBox_filter
             // 
-            this.groupBox_filter.Controls.Add(this.comboBox_filter_stage);
+            this.groupBox_filter.Controls.Add(this.comboBox_filter_floor);
             this.groupBox_filter.Controls.Add(this.comboBox_filter_category);
             this.groupBox_filter.Controls.Add(this.textbox_filter_room_number);
             this.groupBox_filter.Controls.Add(this.label5);
@@ -150,17 +150,17 @@
             this.groupBox_filter.TabStop = false;
             this.groupBox_filter.Text = "Filter";
             // 
-            // comboBox_filter_stage
+            // comboBox_filter_floor
             // 
-            this.comboBox_filter_stage.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox_filter_stage.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox_filter_stage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_filter_stage.FormattingEnabled = true;
-            this.comboBox_filter_stage.Location = new System.Drawing.Point(289, 195);
-            this.comboBox_filter_stage.Name = "comboBox_filter_stage";
-            this.comboBox_filter_stage.Size = new System.Drawing.Size(212, 45);
-            this.comboBox_filter_stage.TabIndex = 35;
-            this.comboBox_filter_stage.TextChanged += new System.EventHandler(this.comboBox_filter_category_TextChanged);
+            this.comboBox_filter_floor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBox_filter_floor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox_filter_floor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_filter_floor.FormattingEnabled = true;
+            this.comboBox_filter_floor.Location = new System.Drawing.Point(289, 195);
+            this.comboBox_filter_floor.Name = "comboBox_filter_floor";
+            this.comboBox_filter_floor.Size = new System.Drawing.Size(212, 45);
+            this.comboBox_filter_floor.TabIndex = 35;
+            this.comboBox_filter_floor.TextChanged += new System.EventHandler(this.comboBox_filter_category_TextChanged);
             // 
             // comboBox_filter_category
             // 
@@ -212,7 +212,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(112, 39);
             this.label6.TabIndex = 7;
-            this.label6.Text = "Stage";
+            this.label6.Text = "Floor";
             // 
             // button_deleteRoom
             // 
@@ -281,16 +281,16 @@
             this.label_ID.TabIndex = 43;
             this.label_ID.Text = "0";
             // 
-            // comboBox_stage
+            // comboBox_floor
             // 
-            this.comboBox_stage.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox_stage.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox_stage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_stage.FormattingEnabled = true;
-            this.comboBox_stage.Location = new System.Drawing.Point(408, 466);
-            this.comboBox_stage.Name = "comboBox_stage";
-            this.comboBox_stage.Size = new System.Drawing.Size(212, 45);
-            this.comboBox_stage.TabIndex = 44;
+            this.comboBox_floor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBox_floor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox_floor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_floor.FormattingEnabled = true;
+            this.comboBox_floor.Location = new System.Drawing.Point(408, 466);
+            this.comboBox_floor.Name = "comboBox_floor";
+            this.comboBox_floor.Size = new System.Drawing.Size(212, 45);
+            this.comboBox_floor.TabIndex = 44;
             // 
             // Form_Room
             // 
@@ -298,7 +298,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1885, 944);
-            this.Controls.Add(this.comboBox_stage);
+            this.Controls.Add(this.comboBox_floor);
             this.Controls.Add(this.label_ID);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button_deleteRoom);
@@ -334,7 +334,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListBox listBox_Rooms;
         private System.Windows.Forms.GroupBox groupBox_filter;
-        private System.Windows.Forms.ComboBox comboBox_filter_stage;
+        private System.Windows.Forms.ComboBox comboBox_filter_floor;
         private System.Windows.Forms.ComboBox comboBox_filter_category;
         private System.Windows.Forms.TextBox textbox_filter_room_number;
         private System.Windows.Forms.Label label5;
@@ -346,6 +346,6 @@
         private System.Windows.Forms.Button button_save;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label_ID;
-        private System.Windows.Forms.ComboBox comboBox_stage;
+        private System.Windows.Forms.ComboBox comboBox_floor;
     }
 }

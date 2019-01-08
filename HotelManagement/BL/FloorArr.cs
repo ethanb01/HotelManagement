@@ -9,52 +9,52 @@ using HotelManagement.DAL;
 
 namespace HotelManagement.BL
 {
-    public class StageArr : ArrayList
+    public class FloorArr : ArrayList
     {
         public void Fill()
         {
 
             //להביא מה-DAL טבלה מלאה בכל הלקוחות
 
-            DataTable dataTable = Stage_DAL.GetDataTable();
+            DataTable dataTable = Floor_DAL.GetDataTable();
 
             //להעביר את הערכים מהטבלה לתוך אוסף הלקוחות
             //להעביר כל שורה בטבלה ללקוח
 
             DataRow dataRow;
-            Stage stage;
+            Floor floor;
             for (int i = 0; i < dataTable.Rows.Count; i++)
             {
                 dataRow = dataTable.Rows[i];
-                stage = new Stage(dataRow);
-                this.Add(stage);
+                floor = new Floor(dataRow);
+                this.Add(floor);
             }
         }
 
-        public Stage GetStageWithMaxId()
+        public Floor GetFloorWithMaxId()
         {
 
             //מחזירה את הישוב עם המזהה הגבוה ביותר
 
-            Stage stage= new Stage();
+            Floor floor= new Floor();
             for (int i = 0; i < this.Count; i++)
             {
-                if ((this[i] as Stage).ID > stage.ID)
-                    stage = (this[i] as Stage);
+                if ((this[i] as Floor).ID > floor.ID)
+                    floor = (this[i] as Floor);
             }
-            return stage;
+            return floor;
         }
 
-        public bool IsContain(string stage)
+        public bool IsContain(string floor)
         {
 
             //בדיקה האם יש ישוב עם אותו שם
-            string curStage;
+            string curFloor;
             for (int i = 0; i < this.Count; i++)
             {
-                curStage = (this[i] as Stage).NumStage;
+                curFloor = (this[i] as Floor).NumFloor;
                 
-                if (int.Parse(curStage) == int.Parse(stage))
+                if (int.Parse(curFloor) == int.Parse(floor))
                     return true;
 
             }

@@ -46,8 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BL\StageArr.cs" />
-    <Compile Include="BL\Stage.cs" />
+    <Compile Include="BL\FloorArr.cs" />
+    <Compile Include="BL\Floor.cs" />
     <Compile Include="BL\CategoryRoom.cs" />
     <Compile Include="BL\City.cs" />
     <Compile Include="BL\CategoryRoomArr.cs" />
@@ -56,7 +56,7 @@
     <Compile Include="BL\Client.cs" />
     <Compile Include="BL\CityArr.cs" />
     <Compile Include="BL\ClientArr.cs" />
-    <Compile Include="DAL\Stage_DAL.cs" />
+    <Compile Include="DAL\Floor_DAL.cs" />
     <Compile Include="DAL\CategoryRoom_DAL.cs" />
     <Compile Include="DAL\City_DAL.cs" />
     <Compile Include="DAL\Room_DAL.cs" />

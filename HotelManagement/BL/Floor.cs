@@ -9,11 +9,11 @@ using System.Data;
 
 namespace HotelManagement.BL
 {
-    public class Stage
+    public class Floor
     {
 
-        private string m_numstage;
-        public string NumStage { get => m_numstage; set => m_numstage = value; }
+        private string m_numfloor;
+        public string NumFloor { get => m_numfloor; set => m_numfloor = value; }
 
         private int m_id;
         public int ID { get => m_id; set => m_id = value; }
@@ -21,33 +21,33 @@ namespace HotelManagement.BL
 
 
 
-        public Stage() { }
+        public Floor() { }
 
-        public Stage(DataRow dataRow)
+        public Floor(DataRow dataRow)
         {
             //מייצרת לקוח מתוך שורת לקוח
             this.ID = (int)dataRow["ID"];
-            this.m_numstage = dataRow["Stage"].ToString();
+            this.m_numfloor = dataRow["Floor"].ToString();
         }
 
         public bool Insert()
         {
-            return Stage_DAL.Insert(m_numstage);
+            return Floor_DAL.Insert(m_numfloor);
         }
 
         public bool Update()
         {
-            return Stage_DAL.Update(m_id,m_numstage);
+            return Floor_DAL.Update(m_id,m_numfloor);
         }
 
 
         public bool Delete()
         {
-            return Stage_DAL.Delete(m_id);
+            return Floor_DAL.Delete(m_id);
         }
         public override string ToString()
         {
-            return m_numstage.ToString();
+            return m_numfloor.ToString();
         }
     }
 }

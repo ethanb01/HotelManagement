@@ -7,23 +7,23 @@ using System.Data;
 
 namespace HotelManagement.DAL
 {
-    class Stage_DAL
+    class Floor_DAL
     {
-        public static bool Insert(string numstage)
+        public static bool Insert(string numfloor)
         {
 
             //מוסיפה את הלקוח למסד הנתונים
             //בניית הוראת ה-SQL
 
-            string str = "INSERT INTO Table_Stage"
+            string str = "INSERT INTO Table_Floor"
 
             + "("
-             + "[Stage]"
+             + "[Floor]"
 
             + ")"
             + " VALUES "
             + "("
-            + "'" + numstage + "'"
+            + "'" + numfloor + "'"
             + ")";
             //הפעלת פעולת הSQL -תוך שימוש בפעולה המוכנה ExecuteSql במחלקה Dal והחזרה האם הפעולה הצליחה
             return Dal.ExecuteSql(str);
@@ -34,25 +34,25 @@ namespace HotelManagement.DAL
             DataTable dataTable = null;
             DataSet dataSet = new DataSet();
             FillDataSet(dataSet);
-            dataTable = dataSet.Tables["Table_Stage"];
+            dataTable = dataSet.Tables["Table_Floor"];
             return dataTable;
         }
 
         public static void FillDataSet(DataSet dataSet)
         {
             //ממלאת את אוסף הטבלאות בטבלת הלקוחות
-            Dal.FillDataSet(dataSet, "Table_Stage", "[Stage]");
+            Dal.FillDataSet(dataSet, "Table_Floor", "[Floor]");
             //בהמשך יהיו כאן הוראות נוספות הקשורות לקשרי גומלין...
             
         }
 
-        public static bool Update(int id, string numstage)
+        public static bool Update(int id, string numfloor)
         {
 
             //מעדכנת את הלקוח במסד הנתונים
 
-            string str = "UPDATE Table_Stage SET"
-            + " " + "[Stage] = " + "'" + numstage + "'"
+            string str = "UPDATE Table_Floor SET"
+            + " " + "[Floor] = " + "'" + numfloor + "'"
             + " WHERE ID = " + id;
 
             //הפעלת פעולת הSQL -תוך שימוש בפעולה המוכנה ExecuteSql במחלקה Dal והחזרה האם הפעולה הצליחה

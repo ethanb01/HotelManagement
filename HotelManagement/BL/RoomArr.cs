@@ -31,7 +31,7 @@ namespace HotelManagement.BL
             }
         }
 
-        public RoomArr Filter(string room_number, Stage stage, CategoryRoom category_room)
+        public RoomArr Filter(string room_number, Floor floor, CategoryRoom category_room)
         {
             RoomArr roomArr = new RoomArr();
 
@@ -50,7 +50,7 @@ namespace HotelManagement.BL
                 room.RoomNumber.StartsWith(room_number)
 
                 //סינון לפי החברה
-                && (room.StageNum.NumStage == stage.NumStage)
+                && (room.FloorNum.NumFloor == floor.NumFloor)
                 //סינון לפי קטגוריה
                 && (category_room == null || category_room.ID == -1 || room.CategoryRoom.ID == category_room.ID)
                 )

@@ -9,7 +9,7 @@ namespace HotelManagement.DAL
 {
     class Room_DAL
     {
-        public static bool Insert(string roomNumber, int category, int stage)
+        public static bool Insert(string roomNumber, int category, int floor)
         {
 
             //מוסיפה את הלקוח למסד הנתונים
@@ -20,14 +20,14 @@ namespace HotelManagement.DAL
             + "("
             + " [RoomNumber]"
             + ",[Category]"
-            + ",[Stage]"
+            + ",[Floor]"
 
             + ")"
             + " VALUES "
             + "("
             + "'" + roomNumber + "'"
             + "," + "" + category + ""
-            + "," + "" + stage + ""
+            + "," + "" + floor + ""
 
             + ")";
             //הפעלת פעולת הSQL -תוך שימוש בפעולה המוכנה ExecuteSql במחלקה Dal והחזרה האם הפעולה הצליחה
@@ -68,21 +68,21 @@ namespace HotelManagement.DAL
 
             dataSet.Relations.Add(dataRelation1);
 
-            Stage_DAL.FillDataSet(dataSet);
+            Floor_DAL.FillDataSet(dataSet);
             DataRelation dataRelation2 = null;
             dataRelation2 = new DataRelation(
 
             //שם קשר הגומלין
 
-            "StageRoom"
+            "FloorRoom"
 
             //עמודת הקשר בטבלת האב )המפתח הראשי של טבלת האב(
 
-            , dataSet.Tables["Table_Stage"].Columns["ID"]
+            , dataSet.Tables["Table_Floor"].Columns["ID"]
 
             //עמודת הקשר בטבלת הבן )המפתח הזר בטבלת הבן(
 
-            , dataSet.Tables["Table_Room"].Columns["Stage"]);
+            , dataSet.Tables["Table_Room"].Columns["Floor"]);
 
             //הוספת קשר הגומלין לאוסף הטבלאות
 
@@ -96,7 +96,7 @@ namespace HotelManagement.DAL
 
 
 
-        public static bool Update(string roomNumber, int category, int stage, int id)
+        public static bool Update(string roomNumber, int category, int floor, int id)
         {
 
             //מעדכנת את הלקוח במסד הנתונים
@@ -104,7 +104,7 @@ namespace HotelManagement.DAL
             string str = "UPDATE Table_Room SET"
             + " " + "[RoomNumber] = " + "'" + roomNumber + "'"
             + "," + "[Category] = " + "" + category + ""
-            + "," + "[Stage] = " + "" + stage + ""
+            + "," + "[Floor] = " + "" + floor + ""
             
             + " WHERE ID = " + id;
 

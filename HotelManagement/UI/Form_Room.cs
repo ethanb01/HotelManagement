@@ -18,9 +18,9 @@ namespace HotelManagement.UI
         {
             InitializeComponent();
             RoomArrToForm();
-            StageArrToForm(null, comboBox_stage, true);
+            FloorArrToForm(null, comboBox_floor, true);
             CategoryArrToForm(null,comboBox_category,true);
-            StageArrToForm(null, comboBox_filter_stage, false);
+            FloorArrToForm(null, comboBox_filter_floor, false);
             CategoryArrToForm(null, comboBox_filter_category, false);
             
         }
@@ -44,18 +44,18 @@ namespace HotelManagement.UI
                 flag = false;
                 textBox_room_number.BackColor = Color.Red;
             }
-            if (comboBox_stage.Text.Length != 1)
+            if (comboBox_floor.Text.Length != 1)
             {
                 flag = false;
-                comboBox_stage.BackColor = Color.Red;
+                comboBox_floor.BackColor = Color.Red;
             }
             if (comboBox_category.Text.Length < 2)
             {
                 flag = false;
                 comboBox_category.BackColor = Color.Red;
             }
-            int max = int.Parse(comboBox_stage.Text) * 100 + 100;
-            int min = int.Parse(comboBox_stage.Text) * 100;
+            int max = int.Parse(comboBox_floor.Text) * 100 + 100;
+            int min = int.Parse(comboBox_floor.Text) * 100;
             int roomNum = int.Parse(textBox_room_number.Text);
             if (roomNum < min || roomNum >= max)
             {
@@ -96,7 +96,7 @@ namespace HotelManagement.UI
         {
             textBox_room_number.BackColor = Color.White;
             comboBox_category.BackColor = Color.White;
-            comboBox_stage.BackColor = Color.White;
+            comboBox_floor.BackColor = Color.White;
         }
 
         private Room FormToRoom()
@@ -104,7 +104,7 @@ namespace HotelManagement.UI
             Room room = new Room();
             room.ID = int.Parse(label_ID.Text);
             room.RoomNumber= textBox_room_number.Text;
-            room.StageNum = (comboBox_stage.SelectedItem as Stage);
+            room.FloorNum = (comboBox_floor.SelectedItem as Floor);
             room.CategoryRoom = (comboBox_category.SelectedItem as CategoryRoom);
             return room;
         }
@@ -127,7 +127,7 @@ namespace HotelManagement.UI
             All_White();
             textBox_room_number.Text = "";
             comboBox_category.Text = "";
-            comboBox_stage.Text = "";
+            comboBox_floor.Text = "";
             label_ID.Text = "0";
         }
 
@@ -136,7 +136,7 @@ namespace HotelManagement.UI
             //ממירה את המידע בטנ"מ לקוח לטופס
             label_ID.Text = room.ID.ToString();
             textBox_room_number.Text = room.RoomNumber;
-            comboBox_stage.Text = room.StageNum.NumStage.ToString();
+            comboBox_floor.Text = room.FloorNum.NumFloor.ToString();
             comboBox_category.Text = room.CategoryRoom.CategoryRoomName;
         }
 
@@ -187,7 +187,7 @@ namespace HotelManagement.UI
 
             roomArr = roomArr.Filter(numRoom,
 
-            comboBox_filter_stage.SelectedItem as Stage,
+            comboBox_filter_floor.SelectedItem as Floor,
             comboBox_filter_category.SelectedItem as CategoryRoom);
             //מציבים בתיבת הרשימה את אוסף המוצרים
 
@@ -215,25 +215,25 @@ namespace HotelManagement.UI
                 comboBox.SelectedValue = curCategoryRoom.ID;
         }
 
-        public void StageArrToForm(Stage curStage, ComboBox comboBox, bool isMustChoose)
+        public void FloorArrToForm(Floor curFloor, ComboBox comboBox, bool isMustChoose)
         {
             //ממירה את הטנ"מ אוסף ישובים לטופס
-            StageArr catrgoryRoomArr = new StageArr();
-            Stage categoryRoomDefault = new Stage();
+            FloorArr catrgoryRoomArr = new FloorArr();
+            Floor categoryRoomDefault = new Floor();
             categoryRoomDefault.ID = -1;
             if (isMustChoose)
-                categoryRoomDefault.NumStage = "Choice Stage";
+                categoryRoomDefault.NumFloor = "Choice Floor";
             else
-                categoryRoomDefault.NumStage = "Every Stage";
+                categoryRoomDefault.NumFloor = "Every Floor";
 
             catrgoryRoomArr.Add(categoryRoomDefault);
 
             catrgoryRoomArr.Fill();
             comboBox.DataSource = catrgoryRoomArr;
             comboBox.ValueMember = "ID";
-            comboBox.DisplayMember = "NumStage";
-            if (curStage != null)
-                comboBox.SelectedValue = curStage.ID;
+            comboBox.DisplayMember = "NumFloor";
+            if (curFloor != null)
+                comboBox.SelectedValue = curFloor.ID;
         }
 
         //private void button_add_city_Click(object sender, EventArgs e)
