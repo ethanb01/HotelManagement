@@ -160,7 +160,7 @@
             this.comboBox_filter_stage.Name = "comboBox_filter_stage";
             this.comboBox_filter_stage.Size = new System.Drawing.Size(212, 45);
             this.comboBox_filter_stage.TabIndex = 35;
-            this.comboBox_filter_stage.KeyUp += new System.Windows.Forms.KeyEventHandler(this.groupbox_lastname_KeyUp);
+            this.comboBox_filter_stage.TextChanged += new System.EventHandler(this.comboBox_filter_category_TextChanged);
             // 
             // comboBox_filter_category
             // 
@@ -172,7 +172,7 @@
             this.comboBox_filter_category.Name = "comboBox_filter_category";
             this.comboBox_filter_category.Size = new System.Drawing.Size(212, 45);
             this.comboBox_filter_category.TabIndex = 34;
-            this.comboBox_filter_category.KeyUp += new System.Windows.Forms.KeyEventHandler(this.groupbox_lastname_KeyUp);
+            this.comboBox_filter_category.TextChanged += new System.EventHandler(this.comboBox_filter_category_TextChanged);
             // 
             // textbox_filter_room_number
             // 
@@ -182,7 +182,7 @@
             this.textbox_filter_room_number.Name = "textbox_filter_room_number";
             this.textbox_filter_room_number.Size = new System.Drawing.Size(212, 48);
             this.textbox_filter_room_number.TabIndex = 15;
-            this.textbox_filter_room_number.KeyUp += new System.Windows.Forms.KeyEventHandler(this.groupbox_lastname_KeyUp);
+            this.textbox_filter_room_number.KeyUp += new System.Windows.Forms.KeyEventHandler(this.groupbox_roomNumber_KeyUp);
             // 
             // label5
             // 
@@ -224,6 +224,7 @@
             this.button_deleteRoom.TabIndex = 41;
             this.button_deleteRoom.Text = "DELETE ROOM";
             this.button_deleteRoom.UseVisualStyleBackColor = true;
+            this.button_deleteRoom.Click += new System.EventHandler(this.button_deleteClient_Click);
             // 
             // button_clean
             // 
@@ -235,6 +236,7 @@
             this.button_clean.TabIndex = 40;
             this.button_clean.Text = "Clean";
             this.button_clean.UseVisualStyleBackColor = true;
+            this.button_clean.Click += new System.EventHandler(this.button_clean_Click);
             // 
             // button_cancel
             // 
@@ -245,6 +247,7 @@
             this.button_cancel.TabIndex = 39;
             this.button_cancel.Text = "Exit";
             this.button_cancel.UseVisualStyleBackColor = true;
+            this.button_cancel.Click += new System.EventHandler(this.button_cancel_Click_1);
             // 
             // button_save
             // 
@@ -256,6 +259,7 @@
             this.button_save.TabIndex = 38;
             this.button_save.Text = "Save";
             this.button_save.UseVisualStyleBackColor = true;
+            this.button_save.Click += new System.EventHandler(this.button_save_Click);
             // 
             // label7
             // 
@@ -292,6 +296,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1885, 944);
             this.Controls.Add(this.comboBox_stage);
             this.Controls.Add(this.label_ID);

@@ -18,10 +18,11 @@ namespace HotelManagement.UI
         {
             InitializeComponent();
             RoomArrToForm();
-            CategoryArrToForm(null,comboBox_category,true);
-            CategoryArrToForm(null, comboBox_filter_category, false);
-            StageArrToForm(null,comboBox_filter_stage,false);
             StageArrToForm(null, comboBox_stage, true);
+            CategoryArrToForm(null,comboBox_category,true);
+            StageArrToForm(null, comboBox_filter_stage, false);
+            CategoryArrToForm(null, comboBox_filter_category, false);
+            
         }
 
         private bool CapsLockChek()
@@ -35,6 +36,7 @@ namespace HotelManagement.UI
         private bool flag = true;
 
         public bool CheckGood()
+        
         {
             flag = true;
             if (textBox_room_number.Text.Length != 3)
@@ -52,10 +54,19 @@ namespace HotelManagement.UI
                 flag = false;
                 comboBox_category.BackColor = Color.Red;
             }
-            
+            int max = int.Parse(comboBox_stage.Text) * 100 + 100;
+            int min = int.Parse(comboBox_stage.Text) * 100;
+            int roomNum = int.Parse(textBox_room_number.Text);
+            if (roomNum < min || roomNum >= max)
+            {
+                flag = false;
+                textBox_room_number.BackColor = Color.Red;
+            }
+
             return flag;
 
         }
+
         public bool IsEnglishLetter(char c)
         {
             return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
@@ -93,10 +104,11 @@ namespace HotelManagement.UI
             Room room = new Room();
             room.ID = int.Parse(label_ID.Text);
             room.RoomNumber= textBox_room_number.Text;
-            room.StageNum.NumStage = comboBox_stage.Text;
-            room.CategoryRoom.CategoryRoomName = comboBox_category.Text;
+            room.StageNum = (comboBox_stage.SelectedItem as Stage);
+            room.CategoryRoom = (comboBox_category.SelectedItem as CategoryRoom);
             return room;
         }
+
         private void RoomArrToForm()
         {
             //ממירה את הטנ"מ אוסף לקוחות לטופס
@@ -104,10 +116,12 @@ namespace HotelManagement.UI
             roomArr.Fill();
             listBox_Rooms.DataSource = roomArr;
         }
+
         private void button_clean_Click(object sender, EventArgs e)
         {
             Clean_Form();
         }
+
         private void Clean_Form()
         { 
             All_White();
@@ -116,8 +130,6 @@ namespace HotelManagement.UI
             comboBox_stage.Text = "";
             label_ID.Text = "0";
         }
-
-
 
         private void RoomToForm(Room room)
         {
@@ -132,7 +144,6 @@ namespace HotelManagement.UI
         {
             RoomToForm(listBox_Rooms.SelectedItem as Room);
         }
-
 
         private void button_deleteClient_Click(object sender, EventArgs e)
         {
@@ -153,10 +164,11 @@ namespace HotelManagement.UI
             }
         }
 
-        private void groupbox_lastname_KeyUp(object sender, KeyEventArgs e)
+        private void groupbox_roomNumber_KeyUp(object sender, KeyEventArgs e)
         {
             SetProductsByFilter();
         }
+
         private void SetProductsByFilter()
         {
             string numRoom = "";
@@ -270,6 +282,16 @@ namespace HotelManagement.UI
 
 
             }
+        }
+
+        private void button_cancel_Click_1(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void comboBox_filter_category_TextChanged(object sender, EventArgs e)
+        {
+            SetProductsByFilter();
         }
     }
 }
