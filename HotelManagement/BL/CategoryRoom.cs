@@ -18,6 +18,9 @@ namespace HotelManagement.BL
         private int m_maxPlace;
         public int MaxPlace { get => m_maxPlace; set => m_maxPlace = value; }
 
+        private int m_price;
+        public int Price { get => m_price; set => m_price = value; }
+
         private int m_id;
         public int ID { get => m_id; set => m_id = value; }
 
@@ -31,16 +34,18 @@ namespace HotelManagement.BL
             //מייצרת לקוח מתוך שורת לקוח
             this.ID = (int)dataRow["ID"];
             this.m_name = dataRow["Name"].ToString();
+            this.m_maxPlace = (int)dataRow["MaxPlaces"];
+            this.m_price = (int)dataRow["Price"];
         }
 
         public bool Insert()
         {
-            return CategoryRoom_DAL.Insert(m_name,m_maxPlace);
+            return CategoryRoom_DAL.Insert(m_name,m_maxPlace,m_price);
         }
 
         public bool Update()
         {
-            return CategoryRoom_DAL.Update(m_id, m_name,m_maxPlace);
+            return CategoryRoom_DAL.Update(m_id, m_name,m_maxPlace, m_price);
         }
 
 

@@ -62,6 +62,12 @@
     <Compile Include="DAL\Room_DAL.cs" />
     <Compile Include="DAL\Client_DAL.cs" />
     <Compile Include="DAL\Dal.cs" />
+    <Compile Include="UI\Form_CategoryRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Form_CategoryRoom.Designer.cs">
+      <DependentUpon>Form_CategoryRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Form_City.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,9 @@
     <Compile Include="UI\Form_Room.Designer.cs">
       <DependentUpon>Form_Room.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\Form_CategoryRoom.resx">
+      <DependentUpon>Form_CategoryRoom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Form_City.resx">
       <DependentUpon>Form_City.cs</DependentUpon>
     </EmbeddedResource>

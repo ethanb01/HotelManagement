@@ -33,6 +33,9 @@ namespace HotelManagement.BL
 
         public RoomArr Filter(string room_number, Floor floor, CategoryRoom category_room)
         {
+        //    if (room_number == "")
+        //        room_number = "-1";
+            
             RoomArr roomArr = new RoomArr();
 
             for (int i = 0; i < this.Count; i++)
@@ -41,12 +44,9 @@ namespace HotelManagement.BL
                 //הצבת המוצר הנוכחי במשתנה עזר - מוצר
 
                 Room room = (this[i] as Room);
-                if (
-
-                //סינון לפי מזהה המוצר
-
-                //סינון לפי שם המוצר
-
+                if (floor.NumFloor == "Every Floor")
+                    room.FloorNum.NumFloor = "Every Floor";
+                if(
                 room.RoomNumber.StartsWith(room_number)
 
                 //סינון לפי החברה

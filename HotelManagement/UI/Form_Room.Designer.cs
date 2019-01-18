@@ -50,6 +50,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label_ID = new System.Windows.Forms.Label();
             this.comboBox_floor = new System.Windows.Forms.ComboBox();
+            this.label_pr = new System.Windows.Forms.Label();
+            this.label_price = new System.Windows.Forms.Label();
             this.groupBox_filter.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,7 +90,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label2.Location = new System.Drawing.Point(113, 466);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 39);
+            this.label2.Size = new System.Drawing.Size(101, 39);
             this.label2.TabIndex = 8;
             this.label2.Text = "Floor";
             // 
@@ -101,6 +103,7 @@
             this.button_add_category.TabIndex = 34;
             this.button_add_category.Text = "+";
             this.button_add_category.UseVisualStyleBackColor = true;
+            this.button_add_category.Click += new System.EventHandler(this.button_add_category_Click);
             // 
             // comboBox_category
             // 
@@ -143,7 +146,7 @@
             this.groupBox_filter.Controls.Add(this.label5);
             this.groupBox_filter.Controls.Add(this.label4);
             this.groupBox_filter.Controls.Add(this.label6);
-            this.groupBox_filter.Location = new System.Drawing.Point(1207, 165);
+            this.groupBox_filter.Location = new System.Drawing.Point(1207, 168);
             this.groupBox_filter.Name = "groupBox_filter";
             this.groupBox_filter.Size = new System.Drawing.Size(576, 271);
             this.groupBox_filter.TabIndex = 37;
@@ -210,7 +213,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label6.Location = new System.Drawing.Point(6, 195);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(112, 39);
+            this.label6.Size = new System.Drawing.Size(101, 39);
             this.label6.TabIndex = 7;
             this.label6.Text = "Floor";
             // 
@@ -292,12 +295,34 @@
             this.comboBox_floor.Size = new System.Drawing.Size(212, 45);
             this.comboBox_floor.TabIndex = 44;
             // 
+            // label_pr
+            // 
+            this.label_pr.AutoSize = true;
+            this.label_pr.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label_pr.Location = new System.Drawing.Point(113, 572);
+            this.label_pr.Name = "label_pr";
+            this.label_pr.Size = new System.Drawing.Size(102, 39);
+            this.label_pr.TabIndex = 45;
+            this.label_pr.Text = "Price";
+            // 
+            // label_price
+            // 
+            this.label_price.AutoSize = true;
+            this.label_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label_price.Location = new System.Drawing.Point(401, 572);
+            this.label_price.Name = "label_price";
+            this.label_price.Size = new System.Drawing.Size(37, 39);
+            this.label_price.TabIndex = 46;
+            this.label_price.Text = "0";
+            // 
             // Form_Room
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1885, 944);
+            this.Controls.Add(this.label_price);
+            this.Controls.Add(this.label_pr);
             this.Controls.Add(this.comboBox_floor);
             this.Controls.Add(this.label_ID);
             this.Controls.Add(this.label7);
@@ -347,5 +372,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label_ID;
         private System.Windows.Forms.ComboBox comboBox_floor;
+        private System.Windows.Forms.Label label_pr;
+        private System.Windows.Forms.Label label_price;
     }
 }

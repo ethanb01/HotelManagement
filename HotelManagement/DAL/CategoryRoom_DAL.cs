@@ -9,7 +9,7 @@ namespace HotelManagement.DAL
 {
     class CategoryRoom_DAL
     {
-        public static bool Insert(string name, int maxPlace)
+        public static bool Insert(string name, int maxPlace, int price)
         {
 
             //מוסיפה את הלקוח למסד הנתונים
@@ -19,13 +19,17 @@ namespace HotelManagement.DAL
 
             + "("
              + "[Name]"
-             + "[MaxPlace]"
+             + ",[MaxPlaces]"
+             + ",[Price]"
+
 
             + ")"
             + " VALUES "
             + "("
             + "'" + name + "'"
-            + "" + maxPlace + ""
+            + "," + "" + maxPlace + ""
+            + "," + "" + price + ""
+
             + ")";
             //הפעלת פעולת הSQL -תוך שימוש בפעולה המוכנה ExecuteSql במחלקה Dal והחזרה האם הפעולה הצליחה
             return Dal.ExecuteSql(str);
@@ -48,14 +52,16 @@ namespace HotelManagement.DAL
             
         }
 
-        public static bool Update(int id, string name, int maxPlace)
+        public static bool Update(int id, string name, int maxPlace, int price)
         {
 
             //מעדכנת את הלקוח במסד הנתונים
 
             string str = "UPDATE Table_RoomCategory SET"
             + " " + "[Name] = " + "'" + name + "'"
-            + " " + "[MaxPlace] = " + "'" + maxPlace + "'"
+            + "," + "[MaxPlaces] = " + "" + maxPlace + ""
+            + "," + "[Price] = " + "" + price + ""
+            
             + " WHERE ID = " + id;
 
             //הפעלת פעולת הSQL -תוך שימוש בפעולה המוכנה ExecuteSql במחלקה Dal והחזרה האם הפעולה הצליחה

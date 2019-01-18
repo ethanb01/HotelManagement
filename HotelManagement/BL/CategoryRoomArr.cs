@@ -31,7 +31,7 @@ namespace HotelManagement.BL
             }
         }
 
-        public CategoryRoom GetCityWithMaxId()
+        public CategoryRoom GetCategoryRoonWithMaxId()
         {
 
             //מחזירה את הישוב עם המזהה הגבוה ביותר

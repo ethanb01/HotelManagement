@@ -129,6 +129,7 @@ namespace HotelManagement.UI
             comboBox_category.Text = "";
             comboBox_floor.Text = "";
             label_ID.Text = "0";
+            label_price.Text = "0";
         }
 
         private void RoomToForm(Room room)
@@ -138,6 +139,7 @@ namespace HotelManagement.UI
             textBox_room_number.Text = room.RoomNumber;
             comboBox_floor.Text = room.FloorNum.NumFloor.ToString();
             comboBox_category.Text = room.CategoryRoom.CategoryRoomName;
+            label_price.Text = room.CategoryRoom.Price.ToString();
         }
 
         private void listBox_Clients_DoubleClick(object sender, EventArgs e)
@@ -236,13 +238,26 @@ namespace HotelManagement.UI
                 comboBox.SelectedValue = curFloor.ID;
         }
 
-        //private void button_add_city_Click(object sender, EventArgs e)
-        //{
-        //    Form_City form_City;
-        //    form_City = new Form_City();
-        //    form_City.ShowDialog();
-        //    CityArrToForm(form_City.SelectedCity);
-        //}
+
+        public void CategoryRoomArrToForm(CategoryRoom curCategoryRoom)
+        {
+
+            //ממירה את הטנ"מ אוסף ישובים לטופס
+
+            CategoryRoomArr categoryRoomArr = new CategoryRoomArr();
+            CategoryRoom categoryRoomDefault = new CategoryRoom();
+            categoryRoomDefault.ID = -1;
+            categoryRoomDefault.CategoryRoomName = "Choice categoryRoom";
+            categoryRoomArr.Add(categoryRoomDefault);
+
+            categoryRoomArr.Fill();
+            comboBox_category.DataSource = categoryRoomArr;
+            comboBox_category.ValueMember = "ID";
+            comboBox_category.DisplayMember = "CategoryRoomName";
+            if (curCategoryRoom != null)
+                comboBox_category.SelectedValue = curCategoryRoom.ID;
+        }
+
 
         private void button_save_Click(object sender, EventArgs e)
         {
@@ -292,6 +307,14 @@ namespace HotelManagement.UI
         private void comboBox_filter_category_TextChanged(object sender, EventArgs e)
         {
             SetProductsByFilter();
+        }
+
+        private void button_add_category_Click(object sender, EventArgs e)
+        {
+            Form_CategoryRoom form_CategoryRoom;
+            form_CategoryRoom = new Form_CategoryRoom();
+            form_CategoryRoom.ShowDialog();
+            CategoryRoomArrToForm(form_CategoryRoom.SelectedCategoryRoom);
         }
     }
 }
