@@ -238,34 +238,12 @@ namespace HotelManagement.UI
                 comboBox.SelectedValue = curFloor.ID;
         }
 
-
-        public void CategoryRoomArrToForm(CategoryRoom curCategoryRoom)
-        {
-
-            //ממירה את הטנ"מ אוסף ישובים לטופס
-
-            CategoryRoomArr categoryRoomArr = new CategoryRoomArr();
-            CategoryRoom categoryRoomDefault = new CategoryRoom();
-            categoryRoomDefault.ID = -1;
-            categoryRoomDefault.CategoryRoomName = "Choice categoryRoom";
-            categoryRoomArr.Add(categoryRoomDefault);
-
-            categoryRoomArr.Fill();
-            comboBox_category.DataSource = categoryRoomArr;
-            comboBox_category.ValueMember = "ID";
-            comboBox_category.DisplayMember = "CategoryRoomName";
-            if (curCategoryRoom != null)
-                comboBox_category.SelectedValue = curCategoryRoom.ID;
-        }
-
-
         private void button_save_Click(object sender, EventArgs e)
         {
             if (!CheckGood())
             {
                 MessageBox.Show("You didn't write right", "TRY AGAIN", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                 All_White();
-
             }
             else
             {
@@ -314,7 +292,15 @@ namespace HotelManagement.UI
             Form_CategoryRoom form_CategoryRoom;
             form_CategoryRoom = new Form_CategoryRoom();
             form_CategoryRoom.ShowDialog();
-            CategoryRoomArrToForm(form_CategoryRoom.SelectedCategoryRoom);
+            CategoryArrToForm(form_CategoryRoom.SelectedCategoryRoom,comboBox_category,true);
+        }
+
+        private void button_new_floor_Click(object sender, EventArgs e)
+        {
+            Form_Floor form_Floor;
+            form_Floor = new Form_Floor();
+            form_Floor.ShowDialog();
+            FloorArrToForm(form_Floor.SelectedFloor,comboBox_floor,true);
         }
     }
 }

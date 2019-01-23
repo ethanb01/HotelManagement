@@ -54,7 +54,7 @@ namespace HotelManagement.BL
             {
                 curFloor = (this[i] as Floor).NumFloor;
                 
-                if (int.Parse(curFloor) == int.Parse(floor))
+                if (curFloor == floor)
                     return true;
 
             }

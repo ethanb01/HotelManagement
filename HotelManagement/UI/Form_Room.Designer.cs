@@ -52,6 +52,7 @@
             this.comboBox_floor = new System.Windows.Forms.ComboBox();
             this.label_pr = new System.Windows.Forms.Label();
             this.label_price = new System.Windows.Forms.Label();
+            this.button_new_floor = new System.Windows.Forms.Button();
             this.groupBox_filter.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,6 +110,7 @@
             // 
             this.comboBox_category.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboBox_category.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox_category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_category.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_category.FormattingEnabled = true;
             this.comboBox_category.Location = new System.Drawing.Point(408, 356);
@@ -157,6 +159,7 @@
             // 
             this.comboBox_filter_floor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboBox_filter_floor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox_filter_floor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_filter_floor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_filter_floor.FormattingEnabled = true;
             this.comboBox_filter_floor.Location = new System.Drawing.Point(289, 195);
@@ -169,6 +172,7 @@
             // 
             this.comboBox_filter_category.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboBox_filter_category.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox_filter_category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_filter_category.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_filter_category.FormattingEnabled = true;
             this.comboBox_filter_category.Location = new System.Drawing.Point(289, 120);
@@ -288,6 +292,7 @@
             // 
             this.comboBox_floor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboBox_floor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox_floor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_floor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_floor.FormattingEnabled = true;
             this.comboBox_floor.Location = new System.Drawing.Point(408, 466);
@@ -315,12 +320,24 @@
             this.label_price.TabIndex = 46;
             this.label_price.Text = "0";
             // 
+            // button_new_floor
+            // 
+            this.button_new_floor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_new_floor.Location = new System.Drawing.Point(647, 472);
+            this.button_new_floor.Name = "button_new_floor";
+            this.button_new_floor.Size = new System.Drawing.Size(42, 39);
+            this.button_new_floor.TabIndex = 47;
+            this.button_new_floor.Text = "+";
+            this.button_new_floor.UseVisualStyleBackColor = true;
+            this.button_new_floor.Click += new System.EventHandler(this.button_new_floor_Click);
+            // 
             // Form_Room
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1885, 944);
+            this.Controls.Add(this.button_new_floor);
             this.Controls.Add(this.label_price);
             this.Controls.Add(this.label_pr);
             this.Controls.Add(this.comboBox_floor);
@@ -374,5 +391,6 @@
         private System.Windows.Forms.ComboBox comboBox_floor;
         private System.Windows.Forms.Label label_pr;
         private System.Windows.Forms.Label label_price;
+        private System.Windows.Forms.Button button_new_floor;
     }
 }
