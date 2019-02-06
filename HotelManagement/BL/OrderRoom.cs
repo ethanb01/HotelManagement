@@ -59,12 +59,12 @@ namespace HotelManagement.BL
 
         public bool Insert()
         {
-            return OrderRoom_DAL.Insert(m_orderRoomNumber, m_CategoryOrderRoom.ID, m_floor.ID);
+            return OrderRoom_DAL.Insert(m_client.ID,m_checkin,m_checkout,m_room.ID,m_comment);
         }
 
         public bool Update()
         {
-            return OrderRoom_DAL.Update(m_orderRoomNumber, m_CategoryOrderRoom.ID, m_floor.ID, m_id);
+            return OrderRoom_DAL.Update(m_id, m_client.ID, m_checkin, m_checkout, m_room.ID, m_comment);
         }
 
 
@@ -74,7 +74,7 @@ namespace HotelManagement.BL
         }
         public override string ToString()
         {
-            return " OrderRoom:" + m_orderRoomNumber;
+            return " OrderRoom:" + m_room.RoomNumber;
         }
     }
 }

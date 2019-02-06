@@ -52,6 +52,7 @@
     <Compile Include="BL\City.cs" />
     <Compile Include="BL\CategoryRoomArr.cs" />
     <Compile Include="BL\OrderRoom.cs" />
+    <Compile Include="BL\OrderRoomArr.cs" />
     <Compile Include="BL\RoomArr.cs" />
     <Compile Include="BL\Room.cs" />
     <Compile Include="BL\Client.cs" />
@@ -90,6 +91,12 @@
     <Compile Include="UI\Form_Floor.Designer.cs">
       <DependentUpon>Form_Floor.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Form_OrderRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Form_OrderRoom.Designer.cs">
+      <DependentUpon>Form_OrderRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Form_Room.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +123,9 @@
     </Compile>
     <EmbeddedResource Include="UI\Form_Floor.resx">
       <DependentUpon>Form_Floor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Form_OrderRoom.resx">
+      <DependentUpon>Form_OrderRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Form_Room.resx">
       <DependentUpon>Form_Room.cs</DependentUpon>
