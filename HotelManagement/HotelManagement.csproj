@@ -51,11 +51,13 @@
     <Compile Include="BL\CategoryRoom.cs" />
     <Compile Include="BL\City.cs" />
     <Compile Include="BL\CategoryRoomArr.cs" />
+    <Compile Include="BL\OrderRoom.cs" />
     <Compile Include="BL\RoomArr.cs" />
     <Compile Include="BL\Room.cs" />
     <Compile Include="BL\Client.cs" />
     <Compile Include="BL\CityArr.cs" />
     <Compile Include="BL\ClientArr.cs" />
+    <Compile Include="DAL\OrderRoom_DAL.cs" />
     <Compile Include="DAL\Floor_DAL.cs" />
     <Compile Include="DAL\CategoryRoom_DAL.cs" />
     <Compile Include="DAL\City_DAL.cs" />

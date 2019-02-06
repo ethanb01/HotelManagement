@@ -22,17 +22,18 @@ namespace HotelManagement.UI
             CategoryArrToForm(null,comboBox_category,true);
             FloorArrToForm(null, comboBox_filter_floor, false);
             CategoryArrToForm(null, comboBox_filter_category, false);
-            
         }
 
         private bool CapsLockChek()
         {
             return (Control.IsKeyLocked(Keys.CapsLock));
         }
+
         private void button_cancel_Click(object sender, EventArgs e)
         {
             Close();
         }
+
         private bool flag = true;
 
         public bool CheckGood()
@@ -44,23 +45,26 @@ namespace HotelManagement.UI
                 flag = false;
                 textBox_room_number.BackColor = Color.Red;
             }
-            if (comboBox_floor.Text.Length != 1)
+            if (comboBox_floor.Text == "Choose Floor")
             {
                 flag = false;
                 comboBox_floor.BackColor = Color.Red;
             }
-            if (comboBox_category.Text.Length < 2)
+            if (comboBox_category.Text == "Choose Category")
             {
                 flag = false;
                 comboBox_category.BackColor = Color.Red;
             }
-            int max = int.Parse(comboBox_floor.Text) * 100 + 100;
-            int min = int.Parse(comboBox_floor.Text) * 100;
-            int roomNum = int.Parse(textBox_room_number.Text);
-            if (roomNum < min || roomNum >= max)
+            if (flag == true)
             {
-                flag = false;
-                textBox_room_number.BackColor = Color.Red;
+                int max = int.Parse(comboBox_floor.Text) * 100 + 100;
+                int min = int.Parse(comboBox_floor.Text) * 100;
+                int roomNum = int.Parse(textBox_room_number.Text);
+                if (roomNum < min || roomNum >= max)
+                {
+                    flag = false;
+                    textBox_room_number.BackColor = Color.Red;
+                }
             }
 
             return flag;
@@ -203,7 +207,7 @@ namespace HotelManagement.UI
             CategoryRoom categoryRoomDefault = new CategoryRoom();
             categoryRoomDefault.ID = -1;
             if(isMustChoose)
-                categoryRoomDefault.CategoryRoomName = "Choice category";
+                categoryRoomDefault.CategoryRoomName = "Choose category";
             else
                 categoryRoomDefault.CategoryRoomName = "Every category";
 
@@ -224,7 +228,7 @@ namespace HotelManagement.UI
             Floor categoryRoomDefault = new Floor();
             categoryRoomDefault.ID = -1;
             if (isMustChoose)
-                categoryRoomDefault.NumFloor = "Choice Floor";
+                categoryRoomDefault.NumFloor = "Choose Floor";
             else
                 categoryRoomDefault.NumFloor = "Every Floor";
 
