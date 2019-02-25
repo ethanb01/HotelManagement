@@ -30,12 +30,10 @@
         {
             this.order_tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button_new_floor = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.comboBox_room = new System.Windows.Forms.ComboBox();
             this.label_price = new System.Windows.Forms.Label();
             this.label_pr = new System.Windows.Forms.Label();
-            this.comboBox_floor = new System.Windows.Forms.ComboBox();
             this.label_ID = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.button_deleteRoom = new System.Windows.Forms.Button();
@@ -51,13 +49,13 @@
             this.label6 = new System.Windows.Forms.Label();
             this.listBox_Rooms = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button_add_category = new System.Windows.Forms.Button();
-            this.comboBox_category = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.roomnum = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.date_checkin = new System.Windows.Forms.DateTimePicker();
+            this.date_checkout = new System.Windows.Forms.DateTimePicker();
             this.order_tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox_filter.SuspendLayout();
@@ -76,12 +74,12 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.date_checkout);
+            this.tabPage1.Controls.Add(this.date_checkin);
             this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.comboBox1);
-            this.tabPage1.Controls.Add(this.button_new_floor);
+            this.tabPage1.Controls.Add(this.comboBox_room);
             this.tabPage1.Controls.Add(this.label_price);
             this.tabPage1.Controls.Add(this.label_pr);
-            this.tabPage1.Controls.Add(this.comboBox_floor);
             this.tabPage1.Controls.Add(this.label_ID);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.button_deleteRoom);
@@ -91,8 +89,6 @@
             this.tabPage1.Controls.Add(this.groupBox_filter);
             this.tabPage1.Controls.Add(this.listBox_Rooms);
             this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.button_add_category);
-            this.tabPage1.Controls.Add(this.comboBox_category);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.roomnum);
@@ -104,36 +100,31 @@
             this.tabPage1.Text = "Order Details";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // button1
             // 
-            this.tabPage2.Location = new System.Drawing.Point(8, 39);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1692, 901);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Client Details";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(637, 300);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(51, 45);
+            this.button1.TabIndex = 68;
+            this.button1.Text = "+";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // tabPage3
+            // comboBox_room
             // 
-            this.tabPage3.Location = new System.Drawing.Point(8, 39);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1692, 901);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Details To Order";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // button_new_floor
-            // 
-            this.button_new_floor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_new_floor.Location = new System.Drawing.Point(632, 442);
-            this.button_new_floor.Margin = new System.Windows.Forms.Padding(2);
-            this.button_new_floor.Name = "button_new_floor";
-            this.button_new_floor.Size = new System.Drawing.Size(49, 45);
-            this.button_new_floor.TabIndex = 66;
-            this.button_new_floor.Text = "+";
-            this.button_new_floor.UseVisualStyleBackColor = true;
+            this.comboBox_room.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBox_room.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox_room.BackColor = System.Drawing.Color.White;
+            this.comboBox_room.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_room.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBox_room.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_room.FormattingEnabled = true;
+            this.comboBox_room.Location = new System.Drawing.Point(406, 301);
+            this.comboBox_room.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox_room.Name = "comboBox_room";
+            this.comboBox_room.Size = new System.Drawing.Size(220, 45);
+            this.comboBox_room.TabIndex = 67;
             // 
             // label_price
             // 
@@ -156,21 +147,6 @@
             this.label_pr.Size = new System.Drawing.Size(102, 39);
             this.label_pr.TabIndex = 64;
             this.label_pr.Text = "Price";
-            // 
-            // comboBox_floor
-            // 
-            this.comboBox_floor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox_floor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox_floor.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.comboBox_floor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_floor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox_floor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_floor.FormattingEnabled = true;
-            this.comboBox_floor.Location = new System.Drawing.Point(406, 443);
-            this.comboBox_floor.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox_floor.Name = "comboBox_floor";
-            this.comboBox_floor.Size = new System.Drawing.Size(220, 45);
-            this.comboBox_floor.TabIndex = 63;
             // 
             // label_ID
             // 
@@ -352,32 +328,6 @@
             this.label3.TabIndex = 54;
             this.label3.Text = "ORDER DETAILS";
             // 
-            // button_add_category
-            // 
-            this.button_add_category.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_add_category.Location = new System.Drawing.Point(630, 371);
-            this.button_add_category.Margin = new System.Windows.Forms.Padding(2);
-            this.button_add_category.Name = "button_add_category";
-            this.button_add_category.Size = new System.Drawing.Size(51, 45);
-            this.button_add_category.TabIndex = 53;
-            this.button_add_category.Text = "+";
-            this.button_add_category.UseVisualStyleBackColor = true;
-            // 
-            // comboBox_category
-            // 
-            this.comboBox_category.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox_category.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox_category.BackColor = System.Drawing.Color.White;
-            this.comboBox_category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_category.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox_category.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_category.FormattingEnabled = true;
-            this.comboBox_category.Location = new System.Drawing.Point(406, 371);
-            this.comboBox_category.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox_category.Name = "comboBox_category";
-            this.comboBox_category.Size = new System.Drawing.Size(220, 45);
-            this.comboBox_category.TabIndex = 52;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -411,31 +361,39 @@
             this.roomnum.TabIndex = 48;
             this.roomnum.Text = "Room Number";
             // 
-            // comboBox1
+            // tabPage2
             // 
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox1.BackColor = System.Drawing.Color.White;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(406, 301);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(220, 45);
-            this.comboBox1.TabIndex = 67;
+            this.tabPage2.Location = new System.Drawing.Point(8, 39);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1692, 901);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Client Details";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // tabPage3
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(637, 300);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(51, 45);
-            this.button1.TabIndex = 68;
-            this.button1.Text = "+";
-            this.button1.UseVisualStyleBackColor = true;
+            this.tabPage3.Location = new System.Drawing.Point(8, 39);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1692, 901);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Details To Order";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // date_checkin
+            // 
+            this.date_checkin.Location = new System.Drawing.Point(426, 384);
+            this.date_checkin.Name = "date_checkin";
+            this.date_checkin.Size = new System.Drawing.Size(200, 31);
+            this.date_checkin.TabIndex = 69;
+            // 
+            // date_checkout
+            // 
+            this.date_checkout.Location = new System.Drawing.Point(426, 457);
+            this.date_checkout.Name = "date_checkout";
+            this.date_checkout.Size = new System.Drawing.Size(200, 31);
+            this.date_checkout.TabIndex = 70;
             // 
             // Form_OrderRoom
             // 
@@ -461,11 +419,9 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button_new_floor;
+        private System.Windows.Forms.ComboBox comboBox_room;
         private System.Windows.Forms.Label label_price;
         private System.Windows.Forms.Label label_pr;
-        private System.Windows.Forms.ComboBox comboBox_floor;
         private System.Windows.Forms.Label label_ID;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button_deleteRoom;
@@ -481,10 +437,10 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ListBox listBox_Rooms;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button_add_category;
-        private System.Windows.Forms.ComboBox comboBox_category;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label roomnum;
+        private System.Windows.Forms.DateTimePicker date_checkout;
+        private System.Windows.Forms.DateTimePicker date_checkin;
     }
 }
