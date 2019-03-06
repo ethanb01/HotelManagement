@@ -91,6 +91,18 @@
     <Compile Include="UI\Form_Floor.Designer.cs">
       <DependentUpon>Form_Floor.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Form_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Form_Login.Designer.cs">
+      <DependentUpon>Form_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Form_Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Form_Menu.Designer.cs">
+      <DependentUpon>Form_Menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Form_OrderRoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +135,12 @@
     </Compile>
     <EmbeddedResource Include="UI\Form_Floor.resx">
       <DependentUpon>Form_Floor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Form_Login.resx">
+      <DependentUpon>Form_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Form_Menu.resx">
+      <DependentUpon>Form_Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Form_OrderRoom.resx">
       <DependentUpon>Form_OrderRoom.cs</DependentUpon>

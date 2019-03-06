@@ -9,7 +9,7 @@ namespace HotelManagement.DAL
 {
     class OrderRoom_DAL
     {
-        public static bool Insert(int client, DateTime checkin, DateTime checkout, int room, string comment)
+        public static bool Insert(int client, DateTime checkin, DateTime checkout, int room, string comment,DateTime date_order, int total_price)
         {
 
             //מוסיפה את הלקוח למסד הנתונים
@@ -22,8 +22,9 @@ namespace HotelManagement.DAL
             + ",[DateCheckin]"
             + ",[DateCheckout]"
             + ",[Room]"
-            + ",[Phone]"
             + ",[Comment]"
+            + ",[DateOrder]"
+            + ",[TotalPrice]"
 
             + ")"
             + " VALUES "
@@ -33,6 +34,8 @@ namespace HotelManagement.DAL
             + "," + "'" + checkout + "'"
             + "," + "" + room + ""
             + "," + "'" + comment + "'"
+            + "," + "'" + date_order + "'"
+            + "," + "" + total_price + ""
 
             + ")";
             //הפעלת פעולת הSQL -תוך שימוש בפעולה המוכנה ExecuteSql במחלקה Dal והחזרה האם הפעולה הצליחה
@@ -99,7 +102,7 @@ namespace HotelManagement.DAL
         }
     
 
-        public static bool Update(int id, int client, DateTime checkin, DateTime checkout, int room, string comment)
+        public static bool Update(int id, int client, DateTime checkin, DateTime checkout, int room, string comment, DateTime date_order, int total_price)
         {
 
             //מעדכנת את הלקוח במסד הנתונים
@@ -110,7 +113,10 @@ namespace HotelManagement.DAL
             + "," + "[DateCheckout] = " + "'" + checkout + "'"
             + "," + "[Room] = " + "" + room+ ""
             + "," + "[Comment] = " + "'" + comment + "'"
-            
+            + "," + "[DateOrder] = " + "'" + date_order+ "'"
+            + "," + "[TotalPrice] = " + "" + total_price + ""
+
+
             + " WHERE ID = " + id;
 
             //הפעלת פעולת הSQL -תוך שימוש בפעולה המוכנה ExecuteSql במחלקה Dal והחזרה האם הפעולה הצליחה
