@@ -1,6 +1,6 @@
 ﻿namespace HotelManagement.UI
 {
-    partial class Form_Menu
+    partial class Form_ClientMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // Form_Menu
+            // Form_ClientMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1178, 703);
-            this.Name = "Form_Menu";
-            this.Text = "Form_Menu";
+            this.ClientSize = new System.Drawing.Size(1321, 847);
+            this.Name = "Form_ClientMenu";
+            this.Text = "Form_ClientMenu";
             this.ResumeLayout(false);
 
         }
