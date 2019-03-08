@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BL\CategoryProduct.cs" />
+    <Compile Include="BL\CategoryProductArr.cs" />
     <Compile Include="BL\FloorArr.cs" />
     <Compile Include="BL\Floor.cs" />
     <Compile Include="BL\CategoryRoom.cs" />
@@ -53,18 +55,28 @@
     <Compile Include="BL\CategoryRoomArr.cs" />
     <Compile Include="BL\OrderRoom.cs" />
     <Compile Include="BL\OrderRoomArr.cs" />
+    <Compile Include="BL\Product.cs" />
+    <Compile Include="BL\ProductArr.cs" />
     <Compile Include="BL\RoomArr.cs" />
     <Compile Include="BL\Room.cs" />
     <Compile Include="BL\Client.cs" />
     <Compile Include="BL\CityArr.cs" />
     <Compile Include="BL\ClientArr.cs" />
+    <Compile Include="DAL\CategoryProduct_DAL.cs" />
     <Compile Include="DAL\OrderRoom_DAL.cs" />
     <Compile Include="DAL\Floor_DAL.cs" />
     <Compile Include="DAL\CategoryRoom_DAL.cs" />
     <Compile Include="DAL\City_DAL.cs" />
+    <Compile Include="DAL\Product_DAL.cs" />
     <Compile Include="DAL\Room_DAL.cs" />
     <Compile Include="DAL\Client_DAL.cs" />
     <Compile Include="DAL\Dal.cs" />
+    <Compile Include="UI\Form_CategoryProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Form_CategoryProduct.Designer.cs">
+      <DependentUpon>Form_CategoryProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Form_CategoryRoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +133,12 @@
     <Compile Include="UI\Form_OrderRoom.Designer.cs">
       <DependentUpon>Form_OrderRoom.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Form_Product.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Form_Product.Designer.cs">
+      <DependentUpon>Form_Product.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Form_Room.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +151,9 @@
     <Compile Include="UI\Form_Login.Designer.cs">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\Form_CategoryProduct.resx">
+      <DependentUpon>Form_CategoryProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Form_CategoryRoom.resx">
       <DependentUpon>Form_CategoryRoom.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Form_OrderRoom.resx">
       <DependentUpon>Form_OrderRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Form_Product.resx">
+      <DependentUpon>Form_Product.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Form_Room.resx">
       <DependentUpon>Form_Room.cs</DependentUpon>
