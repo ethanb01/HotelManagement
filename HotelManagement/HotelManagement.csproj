@@ -53,7 +53,9 @@
     <Compile Include="BL\CategoryRoom.cs" />
     <Compile Include="BL\City.cs" />
     <Compile Include="BL\CategoryRoomArr.cs" />
+    <Compile Include="BL\OrderProduct.cs" />
     <Compile Include="BL\OrderRoom.cs" />
+    <Compile Include="BL\OrderProductArr.cs" />
     <Compile Include="BL\OrderRoomArr.cs" />
     <Compile Include="BL\Product.cs" />
     <Compile Include="BL\ProductArr.cs" />
@@ -63,6 +65,7 @@
     <Compile Include="BL\CityArr.cs" />
     <Compile Include="BL\ClientArr.cs" />
     <Compile Include="DAL\CategoryProduct_DAL.cs" />
+    <Compile Include="DAL\OrderProduct_DAL.cs" />
     <Compile Include="DAL\OrderRoom_DAL.cs" />
     <Compile Include="DAL\Floor_DAL.cs" />
     <Compile Include="DAL\CategoryRoom_DAL.cs" />
@@ -127,6 +130,12 @@
     <Compile Include="UI\Form_AdminMenu.Designer.cs">
       <DependentUpon>Form_AdminMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Form_OrderProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Form_OrderProduct.Designer.cs">
+      <DependentUpon>Form_OrderProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Form_OrderRoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +180,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UI\Form_ClientMenu.resx">
       <DependentUpon>Form_ClientMenu.cs</DependentUpon>
@@ -183,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Form_AdminMenu.resx">
       <DependentUpon>Form_AdminMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Form_OrderProduct.resx">
+      <DependentUpon>Form_OrderProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Form_OrderRoom.resx">
       <DependentUpon>Form_OrderRoom.cs</DependentUpon>
@@ -212,6 +225,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="pic\food.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pic\needed.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pic\shop.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

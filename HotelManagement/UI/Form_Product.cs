@@ -300,6 +300,9 @@ namespace HotelManagement.UI
             SetProductsByFilter();
         }
 
-       
+        private void Form_Product_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

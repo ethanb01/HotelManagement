@@ -16,23 +16,32 @@ namespace HotelManagement.BL
 
         private string m_name;
         public string CategoryProductName { get => m_name; set => m_name = value; }
-        
+
+        private int m_MinHour;
+        public int MinHour { get => m_MinHour; set => m_MinHour = value; }
+
+        private int m_MaxHour;
+        public int MaxHour { get => m_MaxHour; set => m_MaxHour = value; }
+
         public CategoryProduct() { }
 
         public CategoryProduct(DataRow dataRow)
         {
             //מייצרת לקוח מתוך שורת לקוח
-            this.ID = (int)dataRow["ID"];
+            this.m_id = (int)dataRow["ID"];
             this.m_name = dataRow["Name"].ToString();
+            this.m_MinHour = (int)dataRow["MinHour"];
+            this.m_MaxHour = (int)dataRow["MaxHour"];
+
         }
 
         public bool Insert()
         {
-            return CategoryProduct_DAL.Insert(m_name);
+            return CategoryProduct_DAL.Insert(m_name, m_MinHour, m_MaxHour);
         }
         public bool Update()
         {
-            return CategoryProduct_DAL.Update(m_id, m_name);
+            return CategoryProduct_DAL.Update(m_id, m_name,m_MinHour,m_MaxHour);
         }
         public bool Delete()
         {

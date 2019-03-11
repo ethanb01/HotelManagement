@@ -32,17 +32,9 @@ namespace HotelManagement.UI
 
         private void Check_Name(object sender, KeyPressEventArgs e)
         {
-
-            if (!IsEnglishLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && (e.KeyChar != ' '))
-                e.KeyChar = char.MinValue;
-            if (CapsLockChek())
-            {
-                MessageBox.Show("CapsLock is locked");
-                e.KeyChar = char.MinValue;
-
-            }
-
+            //
         }
+        //checknum
 
         public bool IsEnglishLetter(char c)
         {

@@ -44,8 +44,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.listBox_product = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button_add_category = new System.Windows.Forms.Button();
-            this.comboBox_category = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.texbox_nameProduct = new System.Windows.Forms.TextBox();
             this.roomnum = new System.Windows.Forms.Label();
@@ -54,6 +52,8 @@
             this.textBox_details = new System.Windows.Forms.TextBox();
             this.textBox_quantity = new System.Windows.Forms.TextBox();
             this.textBox_price = new System.Windows.Forms.TextBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBox2 = new System.Windows.Forms.ListBox();
             this.groupBox_filter.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,7 +61,7 @@
             // 
             this.label_pr.AutoSize = true;
             this.label_pr.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label_pr.Location = new System.Drawing.Point(168, 523);
+            this.label_pr.Location = new System.Drawing.Point(168, 497);
             this.label_pr.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_pr.Name = "label_pr";
             this.label_pr.Size = new System.Drawing.Size(102, 39);
@@ -119,7 +119,7 @@
             // button_cancel
             // 
             this.button_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_cancel.Location = new System.Drawing.Point(1197, 791);
+            this.button_cancel.Location = new System.Drawing.Point(365, 933);
             this.button_cancel.Margin = new System.Windows.Forms.Padding(2);
             this.button_cancel.Name = "button_cancel";
             this.button_cancel.Size = new System.Drawing.Size(222, 78);
@@ -149,7 +149,7 @@
             this.groupBox_filter.Controls.Add(this.label5);
             this.groupBox_filter.Controls.Add(this.label4);
             this.groupBox_filter.Controls.Add(this.label6);
-            this.groupBox_filter.Location = new System.Drawing.Point(1186, 264);
+            this.groupBox_filter.Location = new System.Drawing.Point(1153, 636);
             this.groupBox_filter.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox_filter.Name = "groupBox_filter";
             this.groupBox_filter.Padding = new System.Windows.Forms.Padding(2);
@@ -261,38 +261,11 @@
             this.label3.TabIndex = 54;
             this.label3.Text = "PRODUCTS";
             // 
-            // button_add_category
-            // 
-            this.button_add_category.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_add_category.Location = new System.Drawing.Point(721, 343);
-            this.button_add_category.Margin = new System.Windows.Forms.Padding(2);
-            this.button_add_category.Name = "button_add_category";
-            this.button_add_category.Size = new System.Drawing.Size(51, 45);
-            this.button_add_category.TabIndex = 53;
-            this.button_add_category.Text = "+";
-            this.button_add_category.UseVisualStyleBackColor = true;
-            this.button_add_category.Click += new System.EventHandler(this.AddCategoryProduct);
-            // 
-            // comboBox_category
-            // 
-            this.comboBox_category.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox_category.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox_category.BackColor = System.Drawing.Color.White;
-            this.comboBox_category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_category.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox_category.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_category.FormattingEnabled = true;
-            this.comboBox_category.Location = new System.Drawing.Point(487, 344);
-            this.comboBox_category.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox_category.Name = "comboBox_category";
-            this.comboBox_category.Size = new System.Drawing.Size(220, 45);
-            this.comboBox_category.TabIndex = 52;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label1.Location = new System.Drawing.Point(168, 343);
+            this.label1.Location = new System.Drawing.Point(1216, 266);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(303, 39);
@@ -324,7 +297,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label8.Location = new System.Drawing.Point(168, 425);
+            this.label8.Location = new System.Drawing.Point(168, 381);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(369, 39);
@@ -335,7 +308,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label9.Location = new System.Drawing.Point(168, 640);
+            this.label9.Location = new System.Drawing.Point(168, 608);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(131, 39);
@@ -355,7 +328,7 @@
             // textBox_quantity
             // 
             this.textBox_quantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.textBox_quantity.Location = new System.Drawing.Point(569, 434);
+            this.textBox_quantity.Location = new System.Drawing.Point(569, 381);
             this.textBox_quantity.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_quantity.Multiline = true;
             this.textBox_quantity.Name = "textBox_quantity";
@@ -365,18 +338,39 @@
             // textBox_price
             // 
             this.textBox_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.textBox_price.Location = new System.Drawing.Point(494, 523);
+            this.textBox_price.Location = new System.Drawing.Point(498, 497);
             this.textBox_price.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_price.Multiline = true;
             this.textBox_price.Name = "textBox_price";
             this.textBox_price.Size = new System.Drawing.Size(213, 45);
             this.textBox_price.TabIndex = 71;
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 25;
+            this.listBox1.Location = new System.Drawing.Point(1223, 330);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(175, 204);
+            this.listBox1.TabIndex = 72;
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 25;
+            this.listBox2.Location = new System.Drawing.Point(1461, 330);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(175, 204);
+            this.listBox2.TabIndex = 73;
+            // 
             // Form_Product
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1813, 1044);
+            this.Controls.Add(this.listBox2);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.textBox_price);
             this.Controls.Add(this.textBox_quantity);
             this.Controls.Add(this.textBox_details);
@@ -392,13 +386,14 @@
             this.Controls.Add(this.groupBox_filter);
             this.Controls.Add(this.listBox_product);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button_add_category);
-            this.Controls.Add(this.comboBox_category);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.texbox_nameProduct);
             this.Controls.Add(this.roomnum);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form_Product";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_Product";
+            this.Load += new System.EventHandler(this.Form_Product_Load);
             this.groupBox_filter.ResumeLayout(false);
             this.groupBox_filter.PerformLayout();
             this.ResumeLayout(false);
@@ -423,8 +418,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ListBox listBox_product;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button_add_category;
-        private System.Windows.Forms.ComboBox comboBox_category;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox texbox_nameProduct;
         private System.Windows.Forms.Label roomnum;
@@ -433,5 +426,7 @@
         private System.Windows.Forms.TextBox textBox_details;
         private System.Windows.Forms.TextBox textBox_quantity;
         private System.Windows.Forms.TextBox textBox_price;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBox2;
     }
 }
