@@ -31,7 +31,7 @@ namespace HotelManagement.BL
             }
         }
 
-        public ProductArr Filter(string name, string quantity, CategoryProduct category_product)
+        public ProductArr Filter(string name, string quantity)//add category
         {
             //    if (product_number == "")
             //        product_number = "-1";
@@ -54,7 +54,7 @@ namespace HotelManagement.BL
                 product.ProductName.StartsWith(name)
                 &&((product.QuantityStock >0) && (quantity == "Yes"))||((product.QuantityStock == 0) && (quantity == "No") || (quantity=="Is in stock?"))
                 //סינון לפי קטגוריה
-                && (category_product == null || category_product.ID == -1 || product.CategoryProduct.ID == category_product.ID)
+                //&& (category_product == null || category_product.ID == -1 || product.CategoryProduct.ID == category_product.ID)
                 )
                 {
 
@@ -67,5 +67,20 @@ namespace HotelManagement.BL
             }
             return productArr;
         }
+
+
+        public Product GetProductWithMaxId()
+        {
+            Product product = new Product();
+            for (int i = 0; i < this.Count; i++)
+            {
+                if ((this[i] as Product).ID > product.ID)
+                {
+                    product = this[i] as Product;
+                }
+            }
+            return product;
+        }
+
     }
 }

@@ -28,7 +28,7 @@ namespace HotelManagement.BL
         public CategoryProduct(DataRow dataRow)
         {
             //מייצרת לקוח מתוך שורת לקוח
-            this.m_id = (int)dataRow["ID"];
+            this.ID = (int)dataRow["ID"];
             this.m_name = dataRow["Name"].ToString();
             this.m_MinHour = (int)dataRow["MinHour"];
             this.m_MaxHour = (int)dataRow["MaxHour"];
@@ -41,7 +41,7 @@ namespace HotelManagement.BL
         }
         public bool Update()
         {
-            return CategoryProduct_DAL.Update(m_id, m_name,m_MinHour,m_MaxHour);
+            return CategoryProduct_DAL.Update(m_id, m_name, m_MinHour, m_MaxHour);
         }
         public bool Delete()
         {

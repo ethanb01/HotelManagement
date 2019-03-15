@@ -66,7 +66,7 @@ namespace HotelManagement.UI
                 {
                     CategoryProductArr oldCategoryProductArr = new CategoryProductArr();
                     oldCategoryProductArr.Fill();
-                    if (!oldCategoryProductArr.IsContain(categoryProduct.CategoryProductName))
+                    if (!oldCategoryProductArr.IsContains(categoryProduct))
                     {
                         if (categoryProduct.Insert())
                         {

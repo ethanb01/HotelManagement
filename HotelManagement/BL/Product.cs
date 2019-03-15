@@ -22,13 +22,7 @@ namespace HotelManagement.BL
 
         private string m_details;
         public string Details { get => m_details; set => m_details = value; }
-
-        private CategoryProduct m_categoryProduct;
-        public CategoryProduct CategoryProduct
-        {
-            get { return m_categoryProduct; }
-            set { m_categoryProduct = value; }
-        }
+        
 
         private int m_quantityStock;
         public int QuantityStock{ get => m_quantityStock; set => m_quantityStock = value; }
@@ -40,7 +34,6 @@ namespace HotelManagement.BL
             //מייצרת לקוח מתוך שורת לקוח
             this.m_id= (int)dataRow["ID"];
             this.m_name = dataRow["Name"].ToString();
-            this.m_categoryProduct= new CategoryProduct(dataRow.GetParentRow("CategoryProduct"));
             this.m_price = (int)dataRow["Price"];
             this.m_details = dataRow["Details"].ToString();
             this.m_quantityStock= (int)dataRow["QuantityStock"];
@@ -48,12 +41,12 @@ namespace HotelManagement.BL
 
         public bool Insert()
         {
-            return Product_DAL.Insert(m_name,m_price,m_details,m_categoryProduct.ID,m_quantityStock);
+            return Product_DAL.Insert(m_name,m_price,m_details,m_quantityStock);
         }
 
         public bool Update()
         {
-            return Product_DAL.Update(m_id, m_name,m_price, m_details, m_categoryProduct.ID,m_quantityStock );
+            return Product_DAL.Update(m_id, m_name,m_price, m_details,m_quantityStock );
         }
 
         public bool Delete()
@@ -62,7 +55,7 @@ namespace HotelManagement.BL
         }
         public override string ToString()
         {
-            return " Product: " + m_name;
+            return m_name +" : " + m_price + "[NIS]";
         }
     }
 }

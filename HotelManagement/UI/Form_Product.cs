@@ -17,10 +17,10 @@ namespace HotelManagement.UI
         public Form_Product()
         {
             InitializeComponent();
-            comboBox_filter_onStock.SelectedIndex = 0;
-            CategoryArrToForm(null, comboBox_category, true);
-            CategoryArrToForm(null, comboBox_filter_category, false);
             ProductArrToForm();
+            CategoryProductArrToForm();
+            comboBox_filter_onStock.SelectedIndex = 0;
+            CategoryArrToForm(null, comboBox_filter_category, false);
         }
 
         private bool CapsLockChek()
@@ -49,10 +49,10 @@ namespace HotelManagement.UI
                 flag = false;
                 textBox_price.BackColor = Color.Red;
             }
-            if (comboBox_category.Text == "Choose Category")
+            if (listBox_category_choosed.DataSource == null)
             {
                 flag = false;
-                comboBox_category.BackColor = Color.Red;
+                listBox_category_choosed.BackColor = Color.Red;
             }
             if (textBox_quantity.Text.Length == 0)
             {
@@ -92,11 +92,52 @@ namespace HotelManagement.UI
         public void All_White()
         {
             textBox_price.BackColor = Color.White;
-            comboBox_category.BackColor = Color.White;
+            listBox_category_choosed.BackColor = Color.White;
             textBox_quantity.BackColor = Color.White;
             texbox_nameProduct.BackColor = Color.White;
         }
+        private void MoveSelectedItemBetweenListBox(ListBox listBox_From, ListBox listBox_To)
+        {
+            CategoryProductArr categoryProductArr = null;
 
+            //מוצאים את הפריט הנבחר
+
+            object selectedItem = listBox_From.SelectedItem;
+
+            //מוסיפים את הפריט הנבחר לרשימת הפריטים הפוטנציאליים
+            //אם כבר יש פריטים ברשימת הפוטנציאליים
+
+            if (listBox_To.DataSource != null)
+                categoryProductArr = listBox_To.DataSource as CategoryProductArr;
+            else
+                categoryProductArr = new CategoryProductArr();
+
+            categoryProductArr.Add(selectedItem);
+            CategoryProductArrToForm(categoryProductArr, listBox_To);
+
+
+            ///הסרת הפריט הנבחרים מרשימת הפריטים הנבחרים
+
+            categoryProductArr = listBox_From.DataSource as CategoryProductArr;
+            categoryProductArr.Remove(selectedItem);
+            CategoryProductArrToForm(categoryProductArr, listBox_From);
+        }
+
+
+        private void CategoryProductArrToForm(CategoryProductArr categoryProductArr, ListBox listBox)
+        {
+            listBox.DataSource = null;
+
+
+            if (categoryProductArr == null)
+            {
+                categoryProductArr = new CategoryProductArr();
+                categoryProductArr.Fill();
+            }
+
+            listBox.DataSource = categoryProductArr;
+
+        }
         private Product FormToProduct()
         {
             Product product = new Product();
@@ -104,7 +145,6 @@ namespace HotelManagement.UI
             product.ProductName = texbox_nameProduct.Text;
             product.Details= textBox_details.Text;
             product.Price = int.Parse(textBox_price.Text);
-            product.CategoryProduct = (comboBox_category.SelectedItem as CategoryProduct);
             product.QuantityStock = int.Parse(textBox_quantity.Text);
 
             return product;
@@ -117,6 +157,13 @@ namespace HotelManagement.UI
             productArr.Fill();
             listBox_product.DataSource = productArr;
         }
+        private void CategoryProductArrToForm()
+        {
+            //ממירה את הטנ"מ אוסף למוצרים לטופס
+            CategoryProductArr categoryProductArr = new CategoryProductArr();
+            categoryProductArr.Fill();
+            listBox_category_potential.DataSource = categoryProductArr;
+        }
 
         private void Clean(object sender, EventArgs e)
         {
@@ -127,20 +174,23 @@ namespace HotelManagement.UI
         {
             All_White();
             texbox_nameProduct.Text = "";
-            comboBox_category.Text = "Choose Category";
             label_id.Text = "0";
             textBox_details.Text = "";
             textBox_price.Text = "";
             textBox_quantity.Text = "";
+            listBox_category_choosed.DataSource = null;
+            listBox_category_choosed.Items.Clear();
+            listBox_category_potential.DataSource = null;
+            CategoryProductArrToForm();
+
         }
-        
+
         private void ProductToForm(Product product)
         {
             //ממירה את המידע בטנ"מ לקוח לטופס
             label_id.Text = product.ID.ToString();
             texbox_nameProduct.Text = product.ProductName;
             textBox_price.Text = product.Price.ToString();
-            comboBox_category.Text = product.CategoryProduct.CategoryProductName;
             textBox_details.Text = product.Details;
             textBox_quantity.Text = product.QuantityStock.ToString();
         }
@@ -148,6 +198,22 @@ namespace HotelManagement.UI
         private void listBox_Clients_DoubleClick(object sender, EventArgs e)
         {
             ProductToForm(listBox_product.SelectedItem as Product);
+
+            CategoryProductArr categoryProductArrChoosed = new CategoryProductArr();
+
+            ProductDetailsArr productDetailsArr = new ProductDetailsArr();
+            productDetailsArr.Fill();
+
+            productDetailsArr = productDetailsArr.Filter((listBox_product.SelectedItem as Product));
+
+            categoryProductArrChoosed = productDetailsArr.GetCategoryProductArr();
+            CategoryProductArrToForm(categoryProductArrChoosed, listBox_category_choosed);
+
+            CategoryProductArr categoryProductArrNotChoosed = new CategoryProductArr();
+            categoryProductArrNotChoosed.Fill();
+
+            categoryProductArrNotChoosed.Remove(categoryProductArrChoosed);
+            CategoryProductArrToForm(categoryProductArrNotChoosed, listBox_category_potential);
         }
 
         private void Delete(object sender, EventArgs e)
@@ -191,8 +257,9 @@ namespace HotelManagement.UI
 
             productArr = productArr.Filter(nameProduct,
 
-            comboBox_filter_onStock.Text,
-            comboBox_filter_category.SelectedItem as CategoryProduct);
+            comboBox_filter_onStock.Text
+            //comboBox_filter_category.SelectedItem as CategoryProduct
+            );
             //מציבים בתיבת הרשימה את אוסף המוצרים
 
             listBox_product.DataSource = productArr;
@@ -240,6 +307,24 @@ namespace HotelManagement.UI
         //        comboBox.SelectedValue = curFloor.ID;
         //}
 
+        private ProductDetailsArr FormToProductDetailsArr(Product curProduct)
+        {
+            ProductDetailsArr productDetailsArr = new ProductDetailsArr();
+
+            ProductDetails productDetails;
+
+            for (int i = 0; i < listBox_category_choosed.Items.Count; i++)
+            {
+                productDetails = new ProductDetails();
+                productDetails.Product = curProduct;
+                productDetails.ProductCategory = listBox_category_choosed.Items[i] as CategoryProduct;
+
+                productDetailsArr.Add(productDetails);
+            }
+
+            return productDetailsArr;
+        }
+
         private void Save(object sender, EventArgs e)
         {
             if (!CheckGood())
@@ -250,13 +335,29 @@ namespace HotelManagement.UI
             else
             {
                 Product product = FormToProduct();
+                ProductDetailsArr productDetailsArr_new;
+                ProductDetailsArr productDetailsArr_old = new ProductDetailsArr();
+
+                ProductArr productArr_new = new ProductArr();
+                productArr_new.Fill();
+
                 if (product.ID == 0)
                 {
                     if (product.Insert())
                     {
+                        ProductArr productArr = new ProductArr();
+                        productArr.Fill();
+                        product = productArr.GetProductWithMaxId();
+                        productDetailsArr_new = FormToProductDetailsArr(product);
+                        productDetailsArr_new.Insert();                      
+
+                        CategoryProductArr categoryProductArr = productDetailsArr_new.GetCategoryProductArr();
+                        categoryProductArr.Update();
+
                         MessageBox.Show("Products Details Saved");
                         CleanForm();
                         ProductArrToForm();
+                        CategoryProductArrToForm();
 
                     }
                     else
@@ -266,6 +367,16 @@ namespace HotelManagement.UI
                 {
                     if (product.Update())
                     {
+                        productDetailsArr_new = FormToProductDetailsArr(product);
+                        productDetailsArr_old.Fill();
+                        productDetailsArr_old = productDetailsArr_old.Filter(product);
+
+                        productDetailsArr_old.Delete();
+                        productDetailsArr_new.Insert();
+
+                        //(listBox_category_choosed.DataSource as CategoryProductArr).Update();
+                        //(listBox_category_potential.DataSource as CategoryProductArr).Update();
+
                         MessageBox.Show("Products Details UPDATED");
                         CleanForm();
                         ProductArrToForm();
@@ -284,7 +395,7 @@ namespace HotelManagement.UI
             Form_CategoryProduct form_CategoryProduct;
             form_CategoryProduct = new Form_CategoryProduct();
             form_CategoryProduct.ShowDialog();
-            CategoryArrToForm(form_CategoryProduct.SelectedCategoryProduct, comboBox_category, true);
+            CategoryProductArrToForm();
         }
 
         private void button_new_floor_Click(object sender, EventArgs e)
@@ -303,6 +414,16 @@ namespace HotelManagement.UI
         private void Form_Product_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void listBox_category_potential_DoubleClick(object sender, EventArgs e)
+        {
+            MoveSelectedItemBetweenListBox(listBox_category_potential, listBox_category_choosed);
+        }
+
+        private void listBox_category_choosed_DoubleClick(object sender, EventArgs e)
+        {
+            MoveSelectedItemBetweenListBox(listBox_category_choosed, listBox_category_potential);
         }
     }
 }

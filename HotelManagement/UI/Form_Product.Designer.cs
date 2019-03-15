@@ -52,8 +52,9 @@
             this.textBox_details = new System.Windows.Forms.TextBox();
             this.textBox_quantity = new System.Windows.Forms.TextBox();
             this.textBox_price = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.listBox_category_potential = new System.Windows.Forms.ListBox();
+            this.listBox_category_choosed = new System.Windows.Forms.ListBox();
+            this.button_add_product = new System.Windows.Forms.Button();
             this.groupBox_filter.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -119,7 +120,7 @@
             // button_cancel
             // 
             this.button_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_cancel.Location = new System.Drawing.Point(365, 933);
+            this.button_cancel.Location = new System.Drawing.Point(353, 916);
             this.button_cancel.Margin = new System.Windows.Forms.Padding(2);
             this.button_cancel.Name = "button_cancel";
             this.button_cancel.Size = new System.Drawing.Size(222, 78);
@@ -175,7 +176,7 @@
             this.comboBox_filter_onStock.Name = "comboBox_filter_onStock";
             this.comboBox_filter_onStock.Size = new System.Drawing.Size(272, 45);
             this.comboBox_filter_onStock.TabIndex = 35;
-            this.comboBox_filter_onStock.TextChanged += new System.EventHandler(this.comboBox_filter_category_TextChanged);
+            this.comboBox_filter_onStock.TextUpdate += new System.EventHandler(this.comboBox_filter_category_TextChanged);
             // 
             // comboBox_filter_category
             // 
@@ -190,7 +191,7 @@
             this.comboBox_filter_category.Name = "comboBox_filter_category";
             this.comboBox_filter_category.Size = new System.Drawing.Size(272, 45);
             this.comboBox_filter_category.TabIndex = 34;
-            this.comboBox_filter_category.TextChanged += new System.EventHandler(this.comboBox_filter_category_TextChanged);
+            this.comboBox_filter_category.TextUpdate += new System.EventHandler(this.comboBox_filter_category_TextChanged);
             // 
             // textbox_filter_productName
             // 
@@ -254,7 +255,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(637, 66);
+            this.label3.Location = new System.Drawing.Point(649, 86);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(338, 63);
@@ -334,6 +335,7 @@
             this.textBox_quantity.Name = "textBox_quantity";
             this.textBox_quantity.Size = new System.Drawing.Size(131, 45);
             this.textBox_quantity.TabIndex = 70;
+            this.textBox_quantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Check_Num);
             // 
             // textBox_price
             // 
@@ -344,24 +346,38 @@
             this.textBox_price.Name = "textBox_price";
             this.textBox_price.Size = new System.Drawing.Size(213, 45);
             this.textBox_price.TabIndex = 71;
+            this.textBox_price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Check_Num);
             // 
-            // listBox1
+            // listBox_category_potential
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 25;
-            this.listBox1.Location = new System.Drawing.Point(1223, 330);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(175, 204);
-            this.listBox1.TabIndex = 72;
+            this.listBox_category_potential.FormattingEnabled = true;
+            this.listBox_category_potential.ItemHeight = 25;
+            this.listBox_category_potential.Location = new System.Drawing.Point(1223, 330);
+            this.listBox_category_potential.Name = "listBox_category_potential";
+            this.listBox_category_potential.Size = new System.Drawing.Size(175, 204);
+            this.listBox_category_potential.TabIndex = 72;
+            this.listBox_category_potential.DoubleClick += new System.EventHandler(this.listBox_category_potential_DoubleClick);
             // 
-            // listBox2
+            // listBox_category_choosed
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 25;
-            this.listBox2.Location = new System.Drawing.Point(1461, 330);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(175, 204);
-            this.listBox2.TabIndex = 73;
+            this.listBox_category_choosed.FormattingEnabled = true;
+            this.listBox_category_choosed.ItemHeight = 25;
+            this.listBox_category_choosed.Location = new System.Drawing.Point(1461, 330);
+            this.listBox_category_choosed.Name = "listBox_category_choosed";
+            this.listBox_category_choosed.Size = new System.Drawing.Size(175, 204);
+            this.listBox_category_choosed.TabIndex = 73;
+            this.listBox_category_choosed.DoubleClick += new System.EventHandler(this.listBox_category_choosed_DoubleClick);
+            // 
+            // button_add_product
+            // 
+            this.button_add_product.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_add_product.Location = new System.Drawing.Point(1542, 255);
+            this.button_add_product.Name = "button_add_product";
+            this.button_add_product.Size = new System.Drawing.Size(60, 56);
+            this.button_add_product.TabIndex = 74;
+            this.button_add_product.Text = "+";
+            this.button_add_product.UseVisualStyleBackColor = true;
+            this.button_add_product.Click += new System.EventHandler(this.AddCategoryProduct);
             // 
             // Form_Product
             // 
@@ -369,8 +385,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1813, 1044);
-            this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.button_add_product);
+            this.Controls.Add(this.listBox_category_choosed);
+            this.Controls.Add(this.listBox_category_potential);
             this.Controls.Add(this.textBox_price);
             this.Controls.Add(this.textBox_quantity);
             this.Controls.Add(this.textBox_details);
@@ -426,7 +443,8 @@
         private System.Windows.Forms.TextBox textBox_details;
         private System.Windows.Forms.TextBox textBox_quantity;
         private System.Windows.Forms.TextBox textBox_price;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox listBox_category_potential;
+        private System.Windows.Forms.ListBox listBox_category_choosed;
+        private System.Windows.Forms.Button button_add_product;
     }
 }

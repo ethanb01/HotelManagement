@@ -46,9 +46,11 @@ namespace HotelManagement.DAL
         public static void FillDataSet(DataSet dataSet)
         {
             //ממלאת את אוסף הטבלאות בטבלת הלקוחות
-            Dal.FillDataSet(dataSet, "Table_ProductCategory", "[Name]");
-            //בהמשך יהיו כאן הוראות נוספות הקשורות לקשרי גומלין...
-            
+            if (!dataSet.Tables.Contains("Table_ProductCategory"))
+            {
+                Dal.FillDataSet(dataSet, "Table_ProductCategory", "[Name]");
+            }            //בהמשך יהיו כאן הוראות נוספות הקשורות לקשרי גומלין...
+
         }
 
         public static bool Update(int id, string name, int minhour, int maxhour)
@@ -58,8 +60,8 @@ namespace HotelManagement.DAL
 
             string str = "UPDATE Table_ProductCategory SET"
             + " " + "[Name] = " + "'" + name + "'"
-            + " " + "[MinhHour] = " + "'" + minhour + "'"
-            + " " + "[MaxHour] = " + "'" + maxhour + "'"
+            + " " + "[MinhHour] = " + "" + minhour + ""
+            + " " + "[MaxHour] = " + "" + maxhour + ""
 
 
             + " WHERE ID = " + id;

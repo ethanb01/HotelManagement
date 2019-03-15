@@ -53,6 +53,8 @@
     <Compile Include="BL\CategoryRoom.cs" />
     <Compile Include="BL\City.cs" />
     <Compile Include="BL\CategoryRoomArr.cs" />
+    <Compile Include="BL\ProductDetailsArr.cs" />
+    <Compile Include="BL\ProductDetails.cs" />
     <Compile Include="BL\OrderProduct.cs" />
     <Compile Include="BL\OrderRoom.cs" />
     <Compile Include="BL\OrderProductArr.cs" />
@@ -70,6 +72,7 @@
     <Compile Include="DAL\Floor_DAL.cs" />
     <Compile Include="DAL\CategoryRoom_DAL.cs" />
     <Compile Include="DAL\City_DAL.cs" />
+    <Compile Include="DAL\ProductDetails_DAL.cs" />
     <Compile Include="DAL\Product_DAL.cs" />
     <Compile Include="DAL\Room_DAL.cs" />
     <Compile Include="DAL\Client_DAL.cs" />

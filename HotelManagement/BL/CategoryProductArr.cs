@@ -31,6 +31,18 @@ namespace HotelManagement.BL
             }
         }
 
+        public bool IsContains(CategoryProduct categoryProduct)
+        {
+            //מחזירה האם האוסף מכיל כבר את המוצר 
+            for (int i = 0; i < this.Count; i++)
+            {
+                if ((this[i] as CategoryProduct).ID == categoryProduct.ID)
+                    return true;
+
+            }
+            return false;
+        }
+
         public CategoryProduct GetCategoryRoonWithMaxId()
         {
 
@@ -44,23 +56,30 @@ namespace HotelManagement.BL
             }
             return maxcategory;
         }
-
-        public bool IsContain(string categoryName)
+        public void Update()
         {
-
-            //בדיקה האם יש ישוב עם אותו שם
-            string curCategoryProduct;
+            //מעדכנת את אוסף המוצרים 
             for (int i = 0; i < this.Count; i++)
             {
-                curCategoryProduct = (this[i] as CategoryProduct).CategoryProductName;
-
-                
-                if (curCategoryProduct == categoryName)
-                    return true;
-
+                (this[i] as CategoryProduct).Update();
             }
-            return false;
         }
+        //public bool IsContain(string categoryName)
+        //{
+
+        //    //בדיקה האם יש ישוב עם אותו שם
+        //    string curCategoryProduct;
+        //    for (int i = 0; i < this.Count; i++)
+        //    {
+        //        curCategoryProduct = (this[i] as CategoryProduct).CategoryProductName;
+
+
+        //        if (curCategoryProduct == categoryName)
+        //            return true;
+
+        //    }
+        //    return false;
+        //}
 
     }
 }
