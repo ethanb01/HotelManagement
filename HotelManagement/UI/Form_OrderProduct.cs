@@ -75,7 +75,8 @@ namespace HotelManagement.UI
         private void Clean_Form()
         {
             All_White();
-            label_order_roomNumber.Text = "Choose Product";
+            label_order_roomNumber.Text = "Choose Room";
+            textBox_comment.Text = "";
             label_order_id.Text = "0";
             label_order_price.Text = "0";
         }

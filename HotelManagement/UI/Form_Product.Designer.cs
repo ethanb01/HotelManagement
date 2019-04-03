@@ -248,6 +248,7 @@
             this.listBox_product.Name = "listBox_product";
             this.listBox_product.Size = new System.Drawing.Size(323, 407);
             this.listBox_product.TabIndex = 55;
+            this.listBox_product.SelectedIndexChanged += new System.EventHandler(this.listBox_product_SelectedIndexChanged);
             this.listBox_product.DoubleClick += new System.EventHandler(this.listBox_Clients_DoubleClick);
             // 
             // label3

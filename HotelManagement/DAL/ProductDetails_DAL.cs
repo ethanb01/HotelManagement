@@ -45,19 +45,17 @@ namespace HotelManagement.DAL
             Dal.FillDataSet(dataSet, "Table_ProductDetails", "[ID]");
 
             CategoryProduct_DAL.FillDataSet(dataSet);
-
             DataRelation dataRelation = null;
             dataRelation = new DataRelation("ProductDetailsCategoryProduct", dataSet.Tables["Table_ProductCategory"].Columns["ID"],
                 dataSet.Tables["Table_ProductDetails"].Columns["Category"]);
-
             dataSet.Relations.Add(dataRelation);
 
-            Product_DAL.FillDataSet(dataSet);
 
+
+            Product_DAL.FillDataSet(dataSet);
             DataRelation dataRelation_V2 = null;
             dataRelation_V2 = new DataRelation("ProductDetailsProduct", dataSet.Tables["Table_Product"].Columns["ID"],
                 dataSet.Tables["Table_ProductDetails"].Columns["Product"]);
-
             dataSet.Relations.Add(dataRelation_V2);
 
         }

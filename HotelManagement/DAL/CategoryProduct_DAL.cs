@@ -26,8 +26,8 @@ namespace HotelManagement.DAL
             + " VALUES "
             + "("
             + "'" + name + "'"
-            + "" + minhour + ""
-            + "" + maxhour + ""
+            + "," + minhour + ""
+            + "," + maxhour + ""
 
             + ")";
             //הפעלת פעולת הSQL -תוך שימוש בפעולה המוכנה ExecuteSql במחלקה Dal והחזרה האם הפעולה הצליחה
@@ -60,8 +60,8 @@ namespace HotelManagement.DAL
 
             string str = "UPDATE Table_ProductCategory SET"
             + " " + "[Name] = " + "'" + name + "'"
-            + " " + "[MinhHour] = " + "" + minhour + ""
-            + " " + "[MaxHour] = " + "" + maxhour + ""
+            + "," + "[MinHour] = " + "" + minhour + ""
+            + "," + "[MaxHour] = " + "" + maxhour + ""
 
 
             + " WHERE ID = " + id;

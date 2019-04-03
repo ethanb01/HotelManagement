@@ -425,5 +425,10 @@ namespace HotelManagement.UI
         {
             MoveSelectedItemBetweenListBox(listBox_category_choosed, listBox_category_potential);
         }
+
+        private void listBox_product_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

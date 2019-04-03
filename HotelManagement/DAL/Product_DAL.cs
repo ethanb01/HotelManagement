@@ -50,7 +50,9 @@ namespace HotelManagement.DAL
             //ממלאת את אוסף הטבלאות בטבלת הלקוחות
             Dal.FillDataSet(dataSet, "Table_Product", "[Name]");
             //בהמשך יהיו כאן הוראות נוספות הקשורות לקשרי גומלין...
-            CategoryProduct_DAL.FillDataSet(dataSet);
+
+          
+            //Product_DAL.FillDataSet(dataSet);
             //DataRelation dataRelation1 = null;
             //dataRelation1 = new DataRelation(
 
@@ -79,7 +81,7 @@ namespace HotelManagement.DAL
             //מעדכנת את הלקוח במסד הנתונים
 
             string str = "UPDATE Table_Product SET"
-            + " " + "[Name] = " + "'" + name + "'"
+            + "" + "[Name] = " + "'" + name + "'"
             + "," + "[Price] = " + "" + price + ""
             + "," + "[Details] = " + "'" + details + "'"
             + "," + "[QuantityStock] = " + "" + quantityStock + ""
