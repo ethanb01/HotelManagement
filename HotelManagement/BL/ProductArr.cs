@@ -31,43 +31,35 @@ namespace HotelManagement.BL
             }
         }
 
-        public ProductArr Filter(string name, string quantity)//add category
+        public ProductArr Filter(string name, string quantity,CategoryProduct category_product )//add category
         {
-            //    if (product_number == "")
-            //        product_number = "-1";
-            int quantity_one_zero;
-            if (quantity == "Yes")
-                quantity_one_zero = 1;
-            else
-                quantity_one_zero = 0;
+           
 
             ProductArr productArr = new ProductArr();
+
+            
 
             for (int i = 0; i < this.Count; i++)
             {
 
-                //הצבת המוצר הנוכחי במשתנה עזר - מוצר
 
                 Product product = (this[i] as Product);
                 
-                if(
+
+                if (
                 product.ProductName.StartsWith(name)
-                &&((product.QuantityStock >0) && (quantity == "Yes"))||((product.QuantityStock == 0) && (quantity == "No") || (quantity=="Is in stock?"))
-                //סינון לפי קטגוריה
-                //&& (category_product == null || category_product.ID == -1 || product.CategoryProduct.ID == category_product.ID)
+                && (((product.QuantityStock > 0) && (quantity == "Yes")) || ((product.QuantityStock <= 0) && (quantity == "No")) || (quantity == "Is in stock?"))
+               // && (category_product == null || category_product.ID == -1 || productDetails.ProductCategory.ID == category_product.ID)
                 )
+
                 {
-
-                    //המוצר ענה לדרישות החיפוש – הוספה שלו לאוסף המוחזר
-
                     productArr.Add(product);
-                    
 
                 }
+                
             }
             return productArr;
         }
-
 
         public Product GetProductWithMaxId()
         {

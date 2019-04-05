@@ -244,21 +244,18 @@ namespace HotelManagement.UI
         {
             string nameProduct = "";
 
-            //אם המשתמש רשם ערך בשדה המזהה
 
             if (textbox_filter_productName.Text != "")
                 nameProduct = textbox_filter_productName.Text;
 
-            //מייצרים אוסף של כלל המוצרים
             ProductArr productArr = new ProductArr();
             productArr.Fill();
 
-            //מסננים את אוסף המוצרים לפי שדות הסינון שרשם המשתמש
 
             productArr = productArr.Filter(nameProduct,
 
-            comboBox_filter_onStock.Text
-            //comboBox_filter_category.SelectedItem as CategoryProduct
+            comboBox_filter_onStock.Text,
+            comboBox_filter_category.SelectedItem as CategoryProduct
             );
             //מציבים בתיבת הרשימה את אוסף המוצרים
 

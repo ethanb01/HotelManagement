@@ -177,6 +177,7 @@
             this.comboBox_filter_onStock.Size = new System.Drawing.Size(272, 45);
             this.comboBox_filter_onStock.TabIndex = 35;
             this.comboBox_filter_onStock.TextUpdate += new System.EventHandler(this.comboBox_filter_category_TextChanged);
+            this.comboBox_filter_onStock.TextChanged += new System.EventHandler(this.comboBox_filter_category_TextChanged);
             // 
             // comboBox_filter_category
             // 
