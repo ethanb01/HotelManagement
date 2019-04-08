@@ -36,7 +36,8 @@ namespace HotelManagement.BL
            
 
             ProductArr productArr = new ProductArr();
-
+            ProductDetailsArr productDetailsArr = new ProductDetailsArr();
+            productDetailsArr.Fill();
             
 
             for (int i = 0; i < this.Count; i++)
@@ -48,13 +49,13 @@ namespace HotelManagement.BL
 
                 if (
                 product.ProductName.StartsWith(name)
-                && (((product.QuantityStock > 0) && (quantity == "Yes")) || ((product.QuantityStock <= 0) && (quantity == "No")) || (quantity == "Is in stock?"))
-               // && (category_product == null || category_product.ID == -1 || productDetails.ProductCategory.ID == category_product.ID)
+                && (((product.QuantityStock > 0) && (quantity == "Yes")) 
+                || ((product.QuantityStock <= 0) && (quantity == "No")) 
+                || (quantity == "Is in stock?"))
+                &&(productDetailsArr.IsProductCategory(product,category_product)||category_product==null||category_product.ID==-1)
                 )
-
                 {
                     productArr.Add(product);
-
                 }
                 
             }

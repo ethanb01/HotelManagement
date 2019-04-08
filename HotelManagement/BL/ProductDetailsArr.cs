@@ -87,6 +87,23 @@ namespace HotelManagement.BL
             return productDetailsArr;
         }
 
+        public bool IsProductCategory(Product product,CategoryProduct category)
+        {
+
+            for (int i = 0; i < this.Count; i++)
+            {
+                ProductDetails productDetails = (this[i] as ProductDetails);
+
+                if ((product == null)||(category == null) || ((product.ID == productDetails.Product.ID)&&(category.ID == productDetails.ProductCategory.ID)))
+                {
+                    return true;
+                }
+            }
+            return false;
+
+        }
+
+
         public bool Delete()
         {
             ProductDetails productDetails = null;

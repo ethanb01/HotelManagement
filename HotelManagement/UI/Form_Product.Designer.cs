@@ -193,6 +193,7 @@
             this.comboBox_filter_category.Size = new System.Drawing.Size(272, 45);
             this.comboBox_filter_category.TabIndex = 34;
             this.comboBox_filter_category.TextUpdate += new System.EventHandler(this.comboBox_filter_category_TextChanged);
+            this.comboBox_filter_category.TextChanged += new System.EventHandler(this.comboBox_filter_category_TextChanged);
             // 
             // textbox_filter_productName
             // 
